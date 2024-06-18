@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:vm="using:Acosta.ViewModels"
+			 x:DataType="vm:MainWindowViewModel"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
+             x:Class="Acosta.Views.AuthorizationView">
+	<Grid>
+		<StackPanel HorizontalAlignment="Center" Margin="0 70">
+			<StackPanel.Styles>
+				<Style Selector="TextBox">
+					<Setter Property="Background" Value="#FFF8F8"></Setter>
+					<Setter Property="BorderBrush" Value="#E40714"></Setter>
+					<Setter Property="CornerRadius" Value="8"></Setter>
+					<Setter Property="BorderThickness" Value="2"></Setter>
+					<Setter Property="FontSize" Value="13"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+				</Style>
+				<Style Selector="Button:pointerover /template/ ContentPresenter">
+					<Setter Property="Background" Value="#A10009"></Setter>
+				</Style>
+			</StackPanel.Styles>
+			
+			<Image Source="avares://Acosta/Assets/AcostaLogo.png" Width="450" Margin="0 0 0 100"></Image>
+			<TextBox Watermark="Логин" Width="360" FontSize="13" Margin="0 0 0 10"></TextBox>
+			<TextBox Watermark="Пароль" PasswordChar="•" Width="360"></TextBox>
+			<TextBlock Margin="0 5 0 0" HorizontalAlignment="Center" FontFamily="Roboto" FontSize="13" Foreground="#A52C2C"></TextBlock>
+			<Button HorizontalAlignment="Center" Margin="0 20 0 10" Width="230" Height="45" CornerRadius="10" Background="#E40714" Command="{Binding LoadPersonalAccount}">
+				<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Roboto" FontSize="16" FontWeight="DemiBold" Foreground="White">Войти</TextBlock>
+			</Button>
+		</StackPanel>
+	</Grid>
+</UserControl>
