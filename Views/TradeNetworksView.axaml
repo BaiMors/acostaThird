@@ -9,36 +9,46 @@
 	<Grid>
 		<StackPanel Width="1550" Height="50" Background="#E40714" VerticalAlignment="Top">
 			<StackPanel.Styles>
-				<Style Selector="TextBlock">
+				<Style Selector="TextBlock.headerLogo">
 					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
 					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Regular"></Setter>
+					<Setter Property="FontSize" Value="35"></Setter>
+					<Setter Property="Margin" Value="30 0 0 0"></Setter>
 				</Style>
-				<Style Selector="Button">
+				<Style Selector="TextBlock.greeting">
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="20"></Setter>
+				</Style>
+				<Style Selector="Button.headerBt">
 					<Setter Property="Background" Value="Transparent"></Setter>
 					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
 					<Setter Property="FontFamily" Value="Roboto"></Setter>
 					<Setter Property="FontSize" Value="20"></Setter>
 					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="Margin" Value="0 5 0 0"></Setter>
 				</Style>
-				<Style Selector="Button:pointerover /template/ ContentPresenter">
+				<Style Selector="Button.headerBt:pointerover /template/ ContentPresenter">
 					<Setter Property="Background" Value="Transparent"></Setter>
 					<Setter Property="Foreground" Value="#F5F5F5"></Setter>	
 					<Setter Property="TextBlock.TextDecorations" Value="Underline"></Setter>	
 					<Setter Property="FontWeight" Value="Medium"></Setter>
 					<Setter Property="FontSize" Value="20"></Setter>
 				</Style>
-				<Style Selector=":is(Button):pressed">
+				<Style Selector="Button.headerBt:pressed">
 					<Setter Property="RenderTransform" Value="none"/>
 				</Style>
 			</StackPanel.Styles>
 			<StackPanel Orientation="Horizontal">
-				<TextBlock Margin="30 0 0 0" FontWeight="Regular" FontSize="35">Acosta</TextBlock>
-				<TextBlock Margin="670 11 0 0" FontWeight="Medium" FontSize="20">Добро пожаловать, оператор</TextBlock>
-				<TextBlock Margin="10 11 0 0" FontWeight="Bold" FontSize="20" Name="FIO">Фамилия И.О.</TextBlock>
-				<TextBlock Margin="10 9 0 0" FontWeight="Medium" FontSize="20">/</TextBlock>
-				<Button Command="">Изменить пароль</Button>
-				<TextBlock Margin="0 9 0 0" FontWeight="Medium" FontSize="20">/</TextBlock>
-				<Button Command="{Binding ExitFromProfile}">Выйти</Button>
+				<TextBlock Classes="headerLogo">Acosta</TextBlock>
+				<TextBlock Classes="greeting" Margin="670 12 0 0">Добро пожаловать, оператор</TextBlock>
+				<TextBlock Classes="greeting" Margin="7 12 0 0" FontWeight="Bold" Name="FIO">Фамилия И.О.</TextBlock>
+				<TextBlock Classes="greeting" Margin="10 10 0 0">/</TextBlock>
+				<Button Classes="headerBt" Command="">Изменить пароль</Button>
+				<TextBlock Classes="greeting" Margin="0 10 0 0">/</TextBlock>
+				<Button Classes="headerBt" Command="{Binding ExitFromProfile}">Выйти</Button>
 			</StackPanel>			
 		</StackPanel>
 	</Grid>
