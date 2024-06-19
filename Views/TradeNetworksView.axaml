@@ -51,5 +51,52 @@
 				<Button Classes="headerBt" Command="{Binding ExitFromProfile}">Выйти</Button>
 			</StackPanel>			
 		</StackPanel>
+		<StackPanel>
+			<StackPanel.Styles>
+				<Style Selector="TextBlock.TextBtBack">
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="20"></Setter>
+					<Setter Property="HorizontalAlignment" Value="Center"></Setter>
+					<Setter Property="VerticalAlignment" Value="Center"></Setter>
+				</Style>
+				<Style Selector="TextBlock.Chapter">
+					<Setter Property="Foreground" Value="Black"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="20"></Setter>
+					<Setter Property="Margin" Value="30 85 0 0"></Setter>
+				</Style>
+				<Style Selector="Button.BtBack">
+					<Setter Property="Width" Value="140"></Setter>
+					<Setter Property="Height" Value="35"></Setter>
+					<Setter Property="Margin" Value="30 80 0 0"></Setter>
+					<Setter Property="Background" Value="#E40714"></Setter>
+					<Setter Property="CornerRadius" Value="13"></Setter>
+				</Style>
+				<Style Selector="Button.BtBack:pointerover /template/ ContentPresenter">
+					<Setter Property="Background" Value="#A10009"></Setter>
+				</Style>
+			<Style Selector="Button.BtAdd">
+					<Setter Property="Height" Value="35"></Setter>
+					<Setter Property="Margin" Value="30 80 0 0"></Setter>
+					<Setter Property="Background" Value="#E40714"></Setter>
+					<Setter Property="CornerRadius" Value="13"></Setter>
+				</Style>
+				<Style Selector="Button.BtAdd:pointerover /template/ ContentPresenter">
+					<Setter Property="Background" Value="#A10009"></Setter>
+				</Style>
+			</StackPanel.Styles>
+			<StackPanel Orientation="Horizontal">
+			<Button Classes="BtBack" Command="">
+				<TextBlock Classes="TextBtBack">Назад</TextBlock>
+			</Button>
+			<TextBlock Classes="Chapter">Выберите Торговую сеть для просмотра</TextBlock>
+			<Button Classes="BtAdd" Width="300" Command="">
+				<TextBlock Classes="TextBtBack">Добавить торговую сеть</TextBlock>				
+			</Button>
+			</StackPanel>			
+		</StackPanel>
 	</Grid>
 </UserControl>
