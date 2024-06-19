@@ -11,8 +11,15 @@ namespace Acosta.ViewModels
 
         public void LoadPersonalAccount()
         {
-            UC = new PersonalAccountView();
-
+            UC = new TradeNetworksView();//PersonalAccountView();
+        }
+        public void ExitFromProfile()
+        {
+            UC = new AuthorizationView();
+        }
+        public void LoadAddTradeNetworksView()
+        {
+            UC = new AddTradeNetworksView();
         }
 
     }
