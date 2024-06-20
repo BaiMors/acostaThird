@@ -21,6 +21,10 @@ namespace Acosta.ViewModels
         {
             UC = new AddTradeNetworksView();
         }
+        public void BackTradeNetworksView()
+        {
+            UC = new TradeNetworksView();
+        }
 
     }
 }
