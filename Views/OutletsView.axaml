@@ -82,8 +82,8 @@
 					<Setter Property="RenderTransform" Value="none"/>
 				</Style>
 				<Style Selector="Button.BtAdd">
-					<Setter Property="Height" Value="35"></Setter>
-					<Setter Property="Margin" Value="620 80 0 0"></Setter>
+					<Setter Property="Height" Value="40"></Setter>
+					<Setter Property="Margin" Value="590 80 0 0"></Setter>
 					<Setter Property="Background" Value="#E40714"></Setter>
 					<Setter Property="CornerRadius" Value="13"></Setter>
 				</Style>
@@ -108,7 +108,7 @@
 			</Button>
 			<TextBlock Classes="Chapter">Выберите Торговую точку для изменения</TextBlock>
 			<StackPanel Orientation="Horizontal">
-				<Button Classes="BtAdd" Width="320" Command="{Binding AddTradeNetworksView}">
+				<Button Classes="BtAdd" Width="330" Command="{Binding AddTradeNetworksView}">
 				<TextBlock Classes="TextBtAdd">Добавить торговую точку</TextBlock>				
 				</Button>
 				<Image Source="avares://Acosta/Assets/plus.png" Width="25" Margin="-70 80 0 0"></Image>
