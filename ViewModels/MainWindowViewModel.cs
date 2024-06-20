@@ -17,7 +17,7 @@ namespace Acosta.ViewModels
         {
             UC = new AuthorizationView();
         }
-        public void LoadAddTradeNetworksView()
+        public void AddTradeNetworksView()
         {
             UC = new AddTradeNetworksView();
         }

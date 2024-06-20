@@ -78,14 +78,28 @@
 				<Style Selector="Button.BtBack:pointerover /template/ ContentPresenter">
 					<Setter Property="Background" Value="#A10009"></Setter>
 				</Style>
-			<Style Selector="Button.BtAdd">
+				<Style Selector="Button.BtBack:pressed">
+					<Setter Property="RenderTransform" Value="none"/>
+				</Style>
+				<Style Selector="Button.BtAdd">
 					<Setter Property="Height" Value="35"></Setter>
-					<Setter Property="Margin" Value="30 80 0 0"></Setter>
+					<Setter Property="Margin" Value="620 80 0 0"></Setter>
 					<Setter Property="Background" Value="#E40714"></Setter>
 					<Setter Property="CornerRadius" Value="13"></Setter>
 				</Style>
 				<Style Selector="Button.BtAdd:pointerover /template/ ContentPresenter">
 					<Setter Property="Background" Value="#A10009"></Setter>
+				</Style>
+				<Style Selector="TextBlock.TextBtAdd">
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="20"></Setter>
+					<Setter Property="Margin" Value="20 0 0 0"></Setter>
+					<Setter Property="VerticalAlignment" Value="Center"></Setter>
+				</Style>
+				<Style Selector="Button.BtAdd:pressed">
+					<Setter Property="RenderTransform" Value="none"/>
 				</Style>
 			</StackPanel.Styles>
 			<StackPanel Orientation="Horizontal">
@@ -93,10 +107,58 @@
 				<TextBlock Classes="TextBtBack">Назад</TextBlock>
 			</Button>
 			<TextBlock Classes="Chapter">Выберите Торговую сеть для просмотра</TextBlock>
-			<Button Classes="BtAdd" Width="300" Command="">
-				<TextBlock Classes="TextBtBack">Добавить торговую сеть</TextBlock>				
-			</Button>
+			<StackPanel Orientation="Horizontal">
+				<Button Classes="BtAdd" Width="320" Command="{Binding AddTradeNetworksView}">
+				<TextBlock Classes="TextBtAdd">Добавить торговую сеть</TextBlock>				
+				</Button>
+				<Image Source="avares://Acosta/Assets/plus.png" Width="25" Margin="-70 80 0 0"></Image>
 			</StackPanel>			
+			</StackPanel>			
+		</StackPanel>
+		<StackPanel Background="Transparent" Margin="0 150 0 0" HorizontalAlignment="Center">
+			<StackPanel.Styles>
+				<Style Selector="TextBlock.TextColumns">
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="20"></Setter>
+					<Setter Property="Margin" Value="40 0 0 0"></Setter>
+					<Setter Property="VerticalAlignment" Value="Center"></Setter>
+				</Style>
+				<Style Selector="Border.TextColumns">
+					<Setter Property="Margin" Value="0 0 0 20"></Setter>
+				</Style>	
+				<Style Selector="Border.Data">
+					<Setter Property="Background" Value="#FFF8F8"></Setter>
+					<Setter Property="BorderBrush" Value="#E40714"></Setter>
+					<Setter Property="CornerRadius" Value="13"></Setter>
+					<Setter Property="BorderThickness" Value="2"></Setter>
+					<Setter Property="Margin" Value="0 0 0 15"></Setter>
+				</Style>		
+				<Style Selector="TextBlock.Data">
+					<Setter Property="Background" Value="#FFF8F8"></Setter>		
+					<Setter Property="FontSize" Value="15"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="Margin" Value="20 0 0 0"></Setter>
+					<Setter Property="VerticalAlignment" Value="Center"></Setter>
+				</Style>			
+			</StackPanel.Styles>
+			<Border Classes="TextColumns" Background="#80E40714" CornerRadius="13"  Width="1490" Height="40">
+				<TextBlock Classes="TextColumns">НАИМЕНОВАНИЕ</TextBlock>				
+			</Border>	
+			<StackPanel Orientation="Vertical">
+				<Border  Classes="Data" CornerRadius="13"  Width="1400" Height="40">
+					<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
+				</Border>
+				<!--Пример как это должно будет выглядеть в зависимости от количества записей в бд и если хочется можно попробовать сделать скролл только записей-->
+				<Border  Classes="Data" CornerRadius="13"  Width="1400" Height="40">
+					<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
+				</Border>
+				<Border  Classes="Data" CornerRadius="13"  Width="1400" Height="40">
+					<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
+				</Border>			
+			</StackPanel>						
 		</StackPanel>
 	</Grid>
 </UserControl>
