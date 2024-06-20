@@ -11,7 +11,7 @@ namespace Acosta.ViewModels
 
         public void LoadPersonalAccount()
         {
-            UC = new TradeNetworksView();//PersonalAccountView();
+            UC = new OutletsView();//PersonalAccountView();
         }
         public void ExitFromProfile()
         {
@@ -25,6 +25,17 @@ namespace Acosta.ViewModels
         {
             UC = new TradeNetworksView();
         }
-
+        public void AddOutletsView()
+        {
+            UC = new AddOutletsView();
+        }
+        public void BackOutletsView()
+        {
+            UC = new OutletsView();
+        }
+        public void EditOutletsView()
+        {
+            UC = new EditOutletsView();
+        }
     }
 }
