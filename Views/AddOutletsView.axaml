@@ -145,6 +145,7 @@
 			</Button>
 			<TextBlock Classes="Chapter">Добавление торговой точки</TextBlock>					
 			</StackPanel>
+			<ScrollViewer Height="600">
 			<StackPanel Orientation="Vertical">
 				<StackPanel Orientation="Horizontal">
 					<TextBlock Classes="TextToTextBox">Торговая сеть:</TextBlock>					
@@ -175,10 +176,10 @@
 					</CheckBox>
 					<CheckBox Classes="TextToCheckBox" Margin="202 10 0 0">
 						<TextBlock>Проект “...”</TextBlock>
-					</CheckBox>
+					</CheckBox>		
 				</StackPanel>
 			</StackPanel>
-			
+			</ScrollViewer>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 			<StackPanel.Styles>

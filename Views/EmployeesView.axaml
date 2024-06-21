@@ -2,7 +2,263 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1550" d:DesignHeight="800.5"
+			 xmlns:vm="using:Acosta.ViewModels"
+			 x:DataType="vm:MainWindowViewModel"
              x:Class="Acosta.Views.EmployeesView">
-  Welcome to Avalonia!
+	<Grid>
+		<StackPanel Width="1550" Height="50" Background="#E40714" VerticalAlignment="Top">
+			<StackPanel.Styles>
+				<Style Selector="TextBlock.headerLogo">
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Regular"></Setter>
+					<Setter Property="FontSize" Value="35"></Setter>
+					<Setter Property="Margin" Value="30 0 0 0"></Setter>
+				</Style>
+				<Style Selector="TextBlock.greeting">
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="20"></Setter>
+				</Style>
+				<Style Selector="Button.headerBt">
+					<Setter Property="Background" Value="Transparent"></Setter>
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontSize" Value="20"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="Margin" Value="0 5 0 0"></Setter>
+				</Style>
+				<Style Selector="Button.headerBt:pointerover /template/ ContentPresenter">
+					<Setter Property="Background" Value="Transparent"></Setter>
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="TextBlock.TextDecorations" Value="Underline"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="20"></Setter>
+				</Style>
+				<Style Selector="Button.headerBt:pressed">
+					<Setter Property="RenderTransform" Value="none"/>
+				</Style>
+			</StackPanel.Styles>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Classes="headerLogo">Acosta</TextBlock>
+				<TextBlock Classes="greeting" Margin="670 12 0 0">Добро пожаловать, оператор</TextBlock>
+				<TextBlock Classes="greeting" Margin="7 12 0 0" FontWeight="Bold" Name="FIO">Фамилия И.О.</TextBlock>
+				<TextBlock Classes="greeting" Margin="10 10 0 0">/</TextBlock>
+				<Button Classes="headerBt" Command="">Изменить пароль</Button>
+				<TextBlock Classes="greeting" Margin="0 10 0 0">/</TextBlock>
+				<Button Classes="headerBt" Command="{Binding ExitFromProfile}">Выйти</Button>
+			</StackPanel>
+		</StackPanel>
+		<StackPanel>
+			<StackPanel.Styles>
+				<Style Selector="TextBlock.TextBtBack">
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="20"></Setter>
+					<Setter Property="HorizontalAlignment" Value="Center"></Setter>
+					<Setter Property="VerticalAlignment" Value="Center"></Setter>
+				</Style>
+				<Style Selector="TextBlock.Chapter">
+					<Setter Property="Foreground" Value="Black"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="20"></Setter>
+					<Setter Property="Margin" Value="30 85 0 0"></Setter>
+				</Style>
+				<Style Selector="Button.BtBack">
+					<Setter Property="Width" Value="140"></Setter>
+					<Setter Property="Height" Value="40"></Setter>
+					<Setter Property="Margin" Value="30 80 0 0"></Setter>
+					<Setter Property="Background" Value="#E40714"></Setter>
+					<Setter Property="CornerRadius" Value="13"></Setter>
+				</Style>
+				<Style Selector="Button.BtBack:pointerover /template/ ContentPresenter">
+					<Setter Property="Background" Value="#A10009"></Setter>
+				</Style>
+				<Style Selector="Button.BtBack:pressed">
+					<Setter Property="RenderTransform" Value="none"/>
+				</Style>
+				<Style Selector="Button.BtAdd">
+					<Setter Property="Height" Value="40"></Setter>
+					<Setter Property="Margin" Value="670 80 0 0"></Setter>
+					<Setter Property="Background" Value="#E40714"></Setter>
+					<Setter Property="CornerRadius" Value="13"></Setter>
+				</Style>
+				<Style Selector="Button.BtAdd:pointerover /template/ ContentPresenter">
+					<Setter Property="Background" Value="#A10009"></Setter>
+				</Style>
+				<Style Selector="TextBlock.TextBtAdd">
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="20"></Setter>
+					<Setter Property="Margin" Value="20 0 0 0"></Setter>
+					<Setter Property="VerticalAlignment" Value="Center"></Setter>
+				</Style>
+				<Style Selector="Button.BtAdd:pressed">
+					<Setter Property="RenderTransform" Value="none"/>
+				</Style>
+			</StackPanel.Styles>
+			<StackPanel Orientation="Horizontal">
+				<Button Classes="BtBack" Command="">
+					<TextBlock Classes="TextBtBack">Назад</TextBlock>
+				</Button>
+				<TextBlock Classes="Chapter">Выберите Сотрудника для изменения</TextBlock>
+				<StackPanel Orientation="Horizontal">
+					<Button Classes="BtAdd" Width="290" Command="{Binding AddEmployeesView}">
+						<TextBlock Classes="TextBtAdd">Добавить сотрудника</TextBlock>
+					</Button>
+					<Image Source="avares://Acosta/Assets/plus.png" Width="25" Margin="-70 80 0 0"></Image>
+				</StackPanel>
+			</StackPanel>
+		</StackPanel>
+		<StackPanel Background="Transparent" Margin="0 150 0 0" HorizontalAlignment="Center">
+			<StackPanel.Styles>
+				<Style Selector="TextBox.EditTextBox">
+					<Setter Property="Foreground" Value="Black"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="15"></Setter>
+					<Setter Property="Background" Value="#FFF8F8"></Setter>
+					<Setter Property="BorderBrush" Value="#E40714"></Setter>
+					<Setter Property="CornerRadius" Value="13"></Setter>
+					<Setter Property="BorderThickness" Value="2"></Setter>
+					<Setter Property="Padding" Value="20 8 0 0"></Setter>
+				</Style>
+				<Style Selector="TextBlock.TextColumns">
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="20"></Setter>
+					<Setter Property="Margin" Value="40 0 185 0"></Setter>
+					<Setter Property="VerticalAlignment" Value="Center"></Setter>
+				</Style>
+				<Style Selector="Border.TextColumns">
+					<Setter Property="Margin" Value="0 0 0 20"></Setter>
+				</Style>
+				<Style Selector="Border.Data">
+					<Setter Property="Background" Value="#FFF8F8"></Setter>
+					<Setter Property="BorderBrush" Value="#E40714"></Setter>
+					<Setter Property="CornerRadius" Value="13"></Setter>
+					<Setter Property="BorderThickness" Value="2"></Setter>
+				</Style>
+				<Style Selector="TextBlock.Data">
+					<Setter Property="Background" Value="#FFF8F8"></Setter>
+					<Setter Property="FontSize" Value="15"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="Margin" Value="20 0 0 0"></Setter>
+					<Setter Property="VerticalAlignment" Value="Center"></Setter>
+				</Style>
+				<Style Selector="TextBlock.TextBtEdit">
+					<Setter Property="Foreground" Value="Black"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="15"></Setter>
+					<Setter Property="Padding" Value="20 4 0 0"></Setter>
+				</Style>
+				<Style Selector="Button.BtEdit">
+					<Setter Property="BorderThickness" Value="2"></Setter>
+					<Setter Property="Width" Value="180"></Setter>
+					<Setter Property="Height" Value="38"></Setter>
+					<Setter Property="Background" Value="#FFF8F8"></Setter>
+					<Setter Property="CornerRadius" Value="13"></Setter>
+					<Setter Property="BorderBrush" Value="#E40714"></Setter>
+				</Style>
+				<Style Selector="Button.BtEdit:pointerover /template/ ContentPresenter">
+					<Setter Property="Background" Value="#FFF8F8"></Setter>
+					<Setter Property="BorderBrush" Value="#E40714"></Setter>
+				</Style>
+				<Style Selector="Button.BtEdit:pressed">
+					<Setter Property="RenderTransform" Value="none"/>
+				</Style>
+			</StackPanel.Styles>
+			<Border Classes="TextColumns" Background="#80E40714" CornerRadius="13"  Width="1490" Height="40">
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Classes="TextColumns">ID</TextBlock>
+					<TextBlock Classes="TextColumns">СОТРУДНИКИ</TextBlock>
+					<TextBlock Classes="TextColumns">РОЛЬ</TextBlock>
+					<TextBlock Classes="TextColumns">ПОЧТА</TextBlock>
+					<TextBlock Classes="TextColumns">ТЕЛЕФОН</TextBlock>
+				</StackPanel>
+			</Border>
+			<ScrollViewer Height="500">
+			<StackPanel Orientation="Vertical">
+				<StackPanel Orientation="Horizontal" Margin="40 0 0 0">
+					<Button Classes="BtEdit" Width="180" Height="40" Margin="0 0 65 0" Command="{Binding EditEmployeesView}">
+						<TextBlock Classes="TextBtEdit">Типа ID</TextBlock>
+					</Button>
+					<!--<Border  Classes="Data" CornerRadius="13"  Width="180" Height="40" Margin="0 0 140 0">
+						<TextBlock Classes="Data">Типа ID</TextBlock>
+					</Border>-->
+					<TextBox Classes="EditTextBox" Width="230" Margin="0 0 125 0">Типа сотрудник</TextBox>
+					<!--<Border  Classes="Data" CornerRadius="13"  Width="310" Height="40" Margin="0 0 140 0">
+						<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
+					</Border>-->
+					<Border  Classes="Data" CornerRadius="13"  Width="170" Height="40" Margin="0 0 105 0">
+						<TextBlock Classes="Data">Типа  роль</TextBlock>
+					</Border>
+					<Border  Classes="Data" CornerRadius="13"  Width="190" Height="40" Margin="0 0 100 0">
+						<TextBlock Classes="Data">Типа  почта</TextBlock>
+					</Border>
+					<Border  Classes="Data" CornerRadius="13"  Width="255" Height="40">
+						<TextBlock Classes="Data">Типа  телефон</TextBlock>
+					</Border>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" Margin="40 20 0 0">
+					<Button Classes="BtEdit" Width="180" Height="40" Margin="0 0 65 0" Command="{Binding EditEmployeesView}">
+						<TextBlock Classes="TextBtEdit">Типа ID</TextBlock>
+					</Button>
+					<!--<Border  Classes="Data" CornerRadius="13"  Width="180" Height="40" Margin="0 0 140 0">
+						<TextBlock Classes="Data">Типа ID</TextBlock>
+					</Border>-->
+					<TextBox Classes="EditTextBox" Width="230" Margin="0 0 125 0">Типа сотрудник</TextBox>
+					<!--<Border  Classes="Data" CornerRadius="13"  Width="310" Height="40" Margin="0 0 140 0">
+						<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
+					</Border>-->
+					<Border  Classes="Data" CornerRadius="13"  Width="170" Height="40" Margin="0 0 105 0">
+						<TextBlock Classes="Data">Типа  роль</TextBlock>
+					</Border>
+					<Border  Classes="Data" CornerRadius="13"  Width="190" Height="40" Margin="0 0 100 0">
+						<TextBlock Classes="Data">Типа  почта</TextBlock>
+					</Border>
+					<Border  Classes="Data" CornerRadius="13"  Width="255" Height="40">
+						<TextBlock Classes="Data">Типа  телефон</TextBlock>
+					</Border>
+				</StackPanel>
+			</StackPanel>			
+			</ScrollViewer>
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+			<StackPanel.Styles>
+				<Style Selector="TextBlock.TextBtSave">
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="20"></Setter>
+					<Setter Property="HorizontalAlignment" Value="Center"></Setter>
+					<Setter Property="VerticalAlignment" Value="Center"></Setter>
+				</Style>
+				<Style Selector="Button.BtSave">
+					<Setter Property="Width" Value="180"></Setter>
+					<Setter Property="Height" Value="38"></Setter>
+					<Setter Property="Margin" Value="0 740 30 20"></Setter>
+					<Setter Property="Background" Value="#E40714"></Setter>
+					<Setter Property="CornerRadius" Value="13"></Setter>
+				</Style>
+				<Style Selector="Button.BtSave:pointerover /template/ ContentPresenter">
+					<Setter Property="Background" Value="#A10009"></Setter>
+				</Style>
+				<Style Selector="Button.BtSave:pressed">
+					<Setter Property="RenderTransform" Value="none"/>
+				</Style>
+			</StackPanel.Styles>
+			<Button Classes="BtSave" Command="">
+				<TextBlock Classes="TextBtSave">Сохранить</TextBlock>
+			</Button>
+		</StackPanel>
+	</Grid>
 </UserControl>

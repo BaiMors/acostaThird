@@ -11,7 +11,7 @@ namespace Acosta.ViewModels
 
         public void LoadPersonalAccount()
         {
-            UC = new OutletsView();//PersonalAccountView();
+            UC = new PersonalAccountView();
         }
         public void ExitFromProfile()
         {
@@ -36,6 +36,18 @@ namespace Acosta.ViewModels
         public void EditOutletsView()
         {
             UC = new EditOutletsView();
+        }
+        public void AddEmployeesView()
+        {
+            UC = new AddEmployeesView();
+        }
+        public void BackEmployeesView()
+        {
+            UC = new EmployeesView();
+        }
+        public void EditEmployeesView()
+        {
+            UC = new EditEmployeesView();
         }
     }
 }
