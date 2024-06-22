@@ -1,17 +1,47 @@
 ﻿using Acosta.Views;
 using Avalonia.Controls;
 using ReactiveUI;
+using Acosta.Models;
+using System.Linq;
+using Acosta.ViewModels;
 
 namespace Acosta.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public UserControl UC { get => uc; set => this.RaiseAndSetIfChanged(ref uc, value); }
-        private UserControl uc = new AuthorizationView();
+        public static SuharevaContext myConnection = new SuharevaContext();
+
+        AuthorizationViewModel authorizationVM = new AuthorizationViewModel();
+        public AuthorizationViewModel AuthorizationVM { get => authorizationVM; set => authorizationVM = value; }
+
+        AddTradeNetworksViewViewModel addTradeNetworksVM = new AddTradeNetworksViewViewModel(myConnection);
+        public AddTradeNetworksViewViewModel AddTradeNetworksVM { get => addTradeNetworksVM; set => addTradeNetworksVM = value; }
+
+        public void SaveData()
+        {
+            myConnection.SaveChanges();
+            UC = new TradeNetworksView();
+        }
+
+        public UserControl UC { get => uc; set => this.RaiseAndSetIfChanged(ref uc, value); }  
+
+        private UserControl uc = new AddEmployeesView();
 
         public void LoadPersonalAccount()
         {
-            UC = new PersonalAccountView();
+            Employee? currentUser = myConnection.Employees.FirstOrDefault(x => x.Email == AuthorizationVM.Login && x.Password == AuthorizationVM.Password);
+            if (currentUser == null)
+            {
+                AuthorizationVM.Message = "Пользователя с такими данными не существует.";
+            }
+            else if (currentUser.Role != 1)
+            {
+                AuthorizationVM.Message = "Ваша роль не соответсвует требованиям.";
+            }
+            else
+            {
+                AuthorizationVM.Message = "Успех!";
+            }
         }
         public void ExitFromProfile()
         {

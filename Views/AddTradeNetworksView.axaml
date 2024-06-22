@@ -132,7 +132,7 @@
 			</StackPanel>
 			<StackPanel Orientation="Horizontal">
 				<TextBlock Classes="TextToTextBox">Наименование:</TextBlock>
-				<TextBox Watermark="Наименование торговой сети" Width="360"></TextBox>
+				<TextBox Text="{Binding AddTradeNetworksVM.CurrentTrade.Title}" Watermark="Наименование торговой сети" Width="360"></TextBox>
 			</StackPanel>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
@@ -187,7 +187,7 @@
 			<Button Classes="BtDelete" Command="">
 				<TextBlock Classes="TextBtDelete">Удалить</TextBlock>
 			</Button>
-			<Button Classes="BtSave" Command="">
+			<Button Classes="BtSave" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).SaveData}">
 				<TextBlock Classes="TextBtSave">Добавить</TextBlock>
 			</Button>
 		</StackPanel>

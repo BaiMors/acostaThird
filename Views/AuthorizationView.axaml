@@ -26,8 +26,9 @@
 			</StackPanel.Styles>
 			
 			<Image Source="avares://Acosta/Assets/AcostaLogo.png" Width="450" Margin="0 0 0 100"></Image>
-			<TextBox Watermark="Логин" Width="360" FontSize="13" Margin="0 0 0 10"></TextBox>
-			<TextBox Watermark="Пароль" PasswordChar="•" Width="360"></TextBox>
+			<TextBox Text="{Binding AuthorizationVM.Login}" Watermark="Логин" Width="360" FontSize="13" Margin="0 0 0 10"></TextBox>
+			<TextBox Text="{Binding AuthorizationVM.Password}" Watermark="Пароль" PasswordChar="•" Width="360"></TextBox>
+			<TextBlock Text="{Binding AuthorizationVM.Message}"/>
 			<TextBlock Margin="0 5 0 0" HorizontalAlignment="Center" FontFamily="Roboto" FontSize="13" Foreground="#A52C2C"></TextBlock>
 			<Button HorizontalAlignment="Center" Margin="0 20 0 10" Width="230" Height="45" CornerRadius="10" Background="#E40714" Command="{Binding LoadPersonalAccount}">
 				<TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Roboto" FontSize="16" FontWeight="DemiBold" Foreground="White">Войти</TextBlock>
