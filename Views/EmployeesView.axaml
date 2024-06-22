@@ -133,7 +133,8 @@
 					<Setter Property="FontFamily" Value="Roboto"></Setter>
 					<Setter Property="FontWeight" Value="Medium"></Setter>
 					<Setter Property="FontSize" Value="20"></Setter>
-					<Setter Property="Margin" Value="40 0 185 0"></Setter>
+					<!--<Setter Property="Margin" Value="40 0 185 0"></Setter>-->
+					<Setter Property="Margin" Value="40 0 100 0"></Setter>
 					<Setter Property="VerticalAlignment" Value="Center"></Setter>
 				</Style>
 				<Style Selector="Border.TextColumns">
@@ -179,7 +180,10 @@
 			<Border Classes="TextColumns" Background="#80E40714" CornerRadius="13"  Width="1490" Height="40">
 				<StackPanel Orientation="Horizontal">
 					<TextBlock Classes="TextColumns">ID</TextBlock>
-					<TextBlock Classes="TextColumns">СОТРУДНИКИ</TextBlock>
+					<!--<TextBlock Classes="TextColumns">СОТРУДНИКИ</TextBlock>-->
+					<TextBlock Classes="TextColumns">ФАМИЛИЯ</TextBlock>
+					<TextBlock Classes="TextColumns">ИМЯ</TextBlock>
+					<TextBlock Classes="TextColumns">ОТЧЕСТВО</TextBlock>
 					<TextBlock Classes="TextColumns">РОЛЬ</TextBlock>
 					<TextBlock Classes="TextColumns">ПОЧТА</TextBlock>
 					<TextBlock Classes="TextColumns">ТЕЛЕФОН</TextBlock>
@@ -187,17 +191,18 @@
 			</Border>
 			<ScrollViewer Height="500">
 			<StackPanel Orientation="Vertical">
-				<StackPanel Orientation="Horizontal" Margin="40 0 0 0">
+				<!--СЛИТНОЕ ФИО-->
+				<!--<StackPanel Orientation="Horizontal" Margin="40 0 0 0">
 					<Button Classes="BtEdit" Width="180" Height="40" Margin="0 0 65 0" Command="{Binding EditEmployeesView}">
 						<TextBlock Classes="TextBtEdit">Типа ID</TextBlock>
 					</Button>
-					<!--<Border  Classes="Data" CornerRadius="13"  Width="180" Height="40" Margin="0 0 140 0">
+					--><!--<Border  Classes="Data" CornerRadius="13"  Width="180" Height="40" Margin="0 0 140 0">
 						<TextBlock Classes="Data">Типа ID</TextBlock>
-					</Border>-->
+					</Border>--><!--
 					<TextBox Classes="EditTextBox" Width="230" Margin="0 0 125 0">Типа сотрудник</TextBox>
-					<!--<Border  Classes="Data" CornerRadius="13"  Width="310" Height="40" Margin="0 0 140 0">
+					--><!--<Border  Classes="Data" CornerRadius="13"  Width="310" Height="40" Margin="0 0 140 0">
 						<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
-					</Border>-->
+					</Border>--><!--
 					<Border  Classes="Data" CornerRadius="13"  Width="170" Height="40" Margin="0 0 105 0">
 						<TextBlock Classes="Data">Типа  роль</TextBlock>
 					</Border>
@@ -207,18 +212,22 @@
 					<Border  Classes="Data" CornerRadius="13"  Width="255" Height="40">
 						<TextBlock Classes="Data">Типа  телефон</TextBlock>
 					</Border>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal" Margin="40 20 0 0">
+				</StackPanel>-->
+				<!--<StackPanel Orientation="Horizontal" Margin="40 20 0 0">
 					<Button Classes="BtEdit" Width="180" Height="40" Margin="0 0 65 0" Command="{Binding EditEmployeesView}">
 						<TextBlock Classes="TextBtEdit">Типа ID</TextBlock>
 					</Button>
-					<!--<Border  Classes="Data" CornerRadius="13"  Width="180" Height="40" Margin="0 0 140 0">
+					-->
+				<!--<Border  Classes="Data" CornerRadius="13"  Width="180" Height="40" Margin="0 0 140 0">
 						<TextBlock Classes="Data">Типа ID</TextBlock>
 					</Border>-->
+				<!--
 					<TextBox Classes="EditTextBox" Width="230" Margin="0 0 125 0">Типа сотрудник</TextBox>
-					<!--<Border  Classes="Data" CornerRadius="13"  Width="310" Height="40" Margin="0 0 140 0">
+					-->
+				<!--<Border  Classes="Data" CornerRadius="13"  Width="310" Height="40" Margin="0 0 140 0">
 						<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
 					</Border>-->
+				<!--
 					<Border  Classes="Data" CornerRadius="13"  Width="170" Height="40" Margin="0 0 105 0">
 						<TextBlock Classes="Data">Типа  роль</TextBlock>
 					</Border>
@@ -226,6 +235,56 @@
 						<TextBlock Classes="Data">Типа  почта</TextBlock>
 					</Border>
 					<Border  Classes="Data" CornerRadius="13"  Width="255" Height="40">
+						<TextBlock Classes="Data">Типа  телефон</TextBlock>
+					</Border>
+				</StackPanel>-->
+				<!--РАЗДЕЛЬНОЕ ФИО-->
+				<StackPanel Orientation="Horizontal" Margin="70 0 0 0"><!--Margin="40 0 0 0"-->
+					<Button Classes="BtEdit" Width="90" Height="40" Margin="0 0 70 0" Command="{Binding EditEmployeesView}">
+						<TextBlock Classes="TextBtEdit">ID</TextBlock>
+					</Button>
+					<!--<Border  Classes="Data" CornerRadius="13"  Width="180" Height="40" Margin="0 0 140 0">
+						<TextBlock Classes="Data">Типа ID</TextBlock>
+					</Border>-->
+					<!--<TextBox Classes="EditTextBox" Width="230" Margin="0 0 125 0">Типа сотрудник</TextBox>-->
+					<TextBox Classes="EditTextBox" Width="170" Margin="0 0 70 0">Типа фамилия</TextBox>
+					<TextBox Classes="EditTextBox" Width="130" Margin="0 0 55 0">Типа имя</TextBox>
+					<TextBox Classes="EditTextBox" Width="170" Margin="0 0 70 0">Типа отчество</TextBox>
+					<!--<Border  Classes="Data" CornerRadius="13"  Width="310" Height="40" Margin="0 0 140 0">
+						<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
+					</Border>-->
+					<Border  Classes="Data" CornerRadius="13"  Width="130" Height="40" Margin="0 0 63 0">
+						<TextBlock Classes="Data">Типа  роль</TextBlock>
+					</Border>
+					<Border  Classes="Data" CornerRadius="13"  Width="150" Height="40" Margin="0 0 55 0">
+						<TextBlock Classes="Data">Типа  почта</TextBlock>
+					</Border>
+					<Border  Classes="Data" CornerRadius="13"  Width="170" Height="40">
+						<TextBlock Classes="Data">Типа  телефон</TextBlock>
+					</Border>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" Margin="70 20 0 0">
+					<!--Margin="40 0 0 0"-->
+					<Button Classes="BtEdit" Width="90" Height="40" Margin="0 0 70 0" Command="{Binding EditEmployeesView}">
+						<TextBlock Classes="TextBtEdit">ID</TextBlock>
+					</Button>
+					<!--<Border  Classes="Data" CornerRadius="13"  Width="180" Height="40" Margin="0 0 140 0">
+						<TextBlock Classes="Data">Типа ID</TextBlock>
+					</Border>-->
+					<!--<TextBox Classes="EditTextBox" Width="230" Margin="0 0 125 0">Типа сотрудник</TextBox>-->
+					<TextBox Classes="EditTextBox" Width="170" Margin="0 0 70 0">Типа фамилия</TextBox>
+					<TextBox Classes="EditTextBox" Width="130" Margin="0 0 55 0">Типа имя</TextBox>
+					<TextBox Classes="EditTextBox" Width="170" Margin="0 0 70 0">Типа отчество</TextBox>
+					<!--<Border  Classes="Data" CornerRadius="13"  Width="310" Height="40" Margin="0 0 140 0">
+						<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
+					</Border>-->
+					<Border  Classes="Data" CornerRadius="13"  Width="130" Height="40" Margin="0 0 63 0">
+						<TextBlock Classes="Data">Типа  роль</TextBlock>
+					</Border>
+					<Border  Classes="Data" CornerRadius="13"  Width="150" Height="40" Margin="0 0 55 0">
+						<TextBlock Classes="Data">Типа  почта</TextBlock>
+					</Border>
+					<Border  Classes="Data" CornerRadius="13"  Width="170" Height="40">
 						<TextBlock Classes="Data">Типа  телефон</TextBlock>
 					</Border>
 				</StackPanel>
