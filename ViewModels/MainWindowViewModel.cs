@@ -17,14 +17,22 @@ namespace Acosta.ViewModels
         AddTradeNetworksViewViewModel addTradeNetworksVM = new AddTradeNetworksViewViewModel(myConnection);
         public AddTradeNetworksViewViewModel AddTradeNetworksVM { get => addTradeNetworksVM; set => addTradeNetworksVM = value; }
 
-        public void SaveData()
+        AddEmployeesViewModel addEmployeesViewModel = new AddEmployeesViewModel(myConnection);
+        public AddEmployeesViewModel AddEmployeesViewModel { get => addEmployeesViewModel; set => addEmployeesViewModel = value; }
+
+        public void SaveNetwork()
         {
             myConnection.SaveChanges();
             UC = new TradeNetworksView();
         }
 
-        public UserControl UC { get => uc; set => this.RaiseAndSetIfChanged(ref uc, value); }  
+        public void SaveUser()
+        {
+            myConnection.SaveChanges();
+            UC = new EmployeesView();
+        }
 
+        public UserControl UC { get => uc; set => this.RaiseAndSetIfChanged(ref uc, value); } 
         private UserControl uc = new AddEmployeesView();
 
         public void LoadPersonalAccount()

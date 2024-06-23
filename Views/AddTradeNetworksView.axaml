@@ -187,7 +187,7 @@
 			<Button Classes="BtDelete" Command="">
 				<TextBlock Classes="TextBtDelete">Удалить</TextBlock>
 			</Button>
-			<Button Classes="BtSave" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).SaveData}">
+			<Button Classes="BtSave" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).SaveNetwork}">
 				<TextBlock Classes="TextBtSave">Добавить</TextBlock>
 			</Button>
 		</StackPanel>
