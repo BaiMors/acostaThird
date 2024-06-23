@@ -180,7 +180,7 @@
 							</Button>
 							<TextBlock VerticalAlignment="Center" FontSize="16">/</TextBlock>
 							<Button Classes="buttons" Command="{Binding BackEmployeesView}">
-								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
 									<Image Source="avares://Acosta/Assets/change.png" Width="20"></Image>
 									<TextBlock Text="Изменить" VerticalAlignment="Center" FontFamily="Roboto" FontSize="15" Margin="10 0"></TextBlock>
 								</StackPanel>
