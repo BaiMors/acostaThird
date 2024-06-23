@@ -51,6 +51,7 @@ namespace Acosta.ViewModels
             {
                 AuthorizationVM.Message = "Успех!";
             }
+            UC = new PersonalAccountView();
         }
         public void ExitFromProfile()
         {

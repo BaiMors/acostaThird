@@ -2,7 +2,57 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:vm="using:Acosta.ViewModels"
+			 x:DataType="vm:MainWindowViewModel"
+             mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
              x:Class="Acosta.Views.PersonalAccountView">
-  Welcome to Personal Account!
+	<Grid>
+		<StackPanel Height="50" Background="#E40714" VerticalAlignment="Top">
+			<StackPanel.Styles>
+				<Style Selector="TextBlock.headerLogo">
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Regular"></Setter>
+					<Setter Property="FontSize" Value="35"></Setter>
+					<Setter Property="Margin" Value="30 0 0 0"></Setter>
+				</Style>
+				<Style Selector="TextBlock.greeting">
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="16"></Setter>
+				</Style>
+				<Style Selector="Button.headerBt">
+					<Setter Property="Background" Value="Transparent"></Setter>
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontSize" Value="16"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+				</Style>
+				<Style Selector="Button.headerBt:pointerover /template/ ContentPresenter">
+					<Setter Property="Background" Value="Transparent"></Setter>
+					<Setter Property="Foreground" Value="#D5AFAF"></Setter>
+					<!--<Setter Property="TextBlock.TextDecorations" Value="Underline"></Setter>-->
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="16"></Setter>
+				</Style>
+				<Style Selector="Button.headerBt:pressed">
+					<Setter Property="RenderTransform" Value="none"/>
+				</Style>
+			</StackPanel.Styles>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Classes="headerLogo">Acosta</TextBlock>
+				<TextBlock Classes="greeting" Margin="770 12 0 0">Добро пожаловать, оператор</TextBlock>
+				<TextBlock Classes="greeting" Margin="7 12 0 0" FontWeight="Bold" Name="FIO">Фамилия И.О.</TextBlock>
+				<TextBlock Classes="greeting" Margin="10 10 0 0">/</TextBlock>
+				<Button Classes="headerBt" Command="">Изменить пароль</Button>
+				<TextBlock Classes="greeting" Margin="0 10 0 0">/</TextBlock>
+				<Button Classes="headerBt" Command="{Binding ExitFromProfile}">Выйти</Button>
+			</StackPanel>
+			<StackPanel>
+				<TextBlock Text="Администрирование приложения" FontFamily="Roboto" FontSize="35" HorizontalAlignment="Center"></TextBlock>
+			</StackPanel>
+		</StackPanel>
+		
+	</Grid>
 </UserControl>
