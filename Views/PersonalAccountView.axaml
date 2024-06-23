@@ -7,52 +7,189 @@
              mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
              x:Class="Acosta.Views.PersonalAccountView">
 	<Grid>
-		<StackPanel Height="50" Background="#E40714" VerticalAlignment="Top">
-			<StackPanel.Styles>
-				<Style Selector="TextBlock.headerLogo">
-					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
-					<Setter Property="FontFamily" Value="Roboto"></Setter>
-					<Setter Property="FontWeight" Value="Regular"></Setter>
-					<Setter Property="FontSize" Value="35"></Setter>
-					<Setter Property="Margin" Value="30 0 0 0"></Setter>
-				</Style>
-				<Style Selector="TextBlock.greeting">
-					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
-					<Setter Property="FontFamily" Value="Roboto"></Setter>
-					<Setter Property="FontWeight" Value="Medium"></Setter>
-					<Setter Property="FontSize" Value="16"></Setter>
-				</Style>
-				<Style Selector="Button.headerBt">
-					<Setter Property="Background" Value="Transparent"></Setter>
-					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
-					<Setter Property="FontFamily" Value="Roboto"></Setter>
-					<Setter Property="FontSize" Value="16"></Setter>
-					<Setter Property="FontWeight" Value="Medium"></Setter>
-				</Style>
-				<Style Selector="Button.headerBt:pointerover /template/ ContentPresenter">
-					<Setter Property="Background" Value="Transparent"></Setter>
-					<Setter Property="Foreground" Value="#D5AFAF"></Setter>
-					<!--<Setter Property="TextBlock.TextDecorations" Value="Underline"></Setter>-->
-					<Setter Property="FontWeight" Value="Medium"></Setter>
-					<Setter Property="FontSize" Value="16"></Setter>
-				</Style>
-				<Style Selector="Button.headerBt:pressed">
-					<Setter Property="RenderTransform" Value="none"/>
-				</Style>
-			</StackPanel.Styles>
-			<StackPanel Orientation="Horizontal">
-				<TextBlock Classes="headerLogo">Acosta</TextBlock>
-				<TextBlock Classes="greeting" Margin="770 12 0 0">Добро пожаловать, оператор</TextBlock>
-				<TextBlock Classes="greeting" Margin="7 12 0 0" FontWeight="Bold" Name="FIO">Фамилия И.О.</TextBlock>
-				<TextBlock Classes="greeting" Margin="10 10 0 0">/</TextBlock>
-				<Button Classes="headerBt" Command="">Изменить пароль</Button>
-				<TextBlock Classes="greeting" Margin="0 10 0 0">/</TextBlock>
-				<Button Classes="headerBt" Command="{Binding ExitFromProfile}">Выйти</Button>
+		<StackPanel>
+			<StackPanel Height="50" Background="#E40714" VerticalAlignment="Top">
+				<StackPanel.Styles>
+					<Style Selector="TextBlock.headerLogo">
+						<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+						<Setter Property="FontFamily" Value="Roboto"></Setter>
+						<Setter Property="FontWeight" Value="Regular"></Setter>
+						<Setter Property="FontSize" Value="35"></Setter>
+						<Setter Property="Margin" Value="30 0 0 0"></Setter>
+					</Style>
+					<Style Selector="TextBlock.greeting">
+						<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+						<Setter Property="FontFamily" Value="Roboto"></Setter>
+						<Setter Property="FontWeight" Value="Medium"></Setter>
+						<Setter Property="FontSize" Value="16"></Setter>
+					</Style>
+					<Style Selector="Button.headerBt">
+						<Setter Property="Background" Value="Transparent"></Setter>
+						<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+						<Setter Property="FontFamily" Value="Roboto"></Setter>
+						<Setter Property="FontSize" Value="16"></Setter>
+						<Setter Property="FontWeight" Value="Medium"></Setter>
+					</Style>
+					<Style Selector="Button.headerBt:pointerover /template/ ContentPresenter">
+						<Setter Property="Background" Value="Transparent"></Setter>
+						<Setter Property="Foreground" Value="#D5AFAF"></Setter>
+						<Setter Property="FontWeight" Value="Medium"></Setter>
+						<Setter Property="FontSize" Value="16"></Setter>
+					</Style>
+					<Style Selector="Button.headerBt:pressed">
+						<Setter Property="RenderTransform" Value="none"/>
+					</Style>
+				</StackPanel.Styles>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Classes="headerLogo">Acosta</TextBlock>
+					<TextBlock Classes="greeting" Margin="770 12 0 0">Добро пожаловать, оператор</TextBlock>
+					<TextBlock Classes="greeting" Margin="7 12 0 0" FontWeight="Bold" Name="FIO">Фамилия И.О.</TextBlock>
+					<TextBlock Classes="greeting" Margin="10 10 0 0">/</TextBlock>
+					<Button Classes="headerBt" Command="">Изменить пароль</Button>
+					<TextBlock Classes="greeting" Margin="0 10 0 0">/</TextBlock>
+					<Button Classes="headerBt" Command="{Binding ExitFromProfile}">Выйти</Button>
+				</StackPanel>
 			</StackPanel>
 			<StackPanel>
-				<TextBlock Text="Администрирование приложения" FontFamily="Roboto" FontSize="35" HorizontalAlignment="Center"></TextBlock>
+				<TextBlock Text="Администрирование приложения" FontWeight="Medium" FontFamily="Roboto" FontSize="30" HorizontalAlignment="Center" Margin="0 100 0 30"></TextBlock>
+				<StackPanel.Styles>
+					<Style Selector="Border.field">
+						<Setter Property="Width" Value="600"></Setter>
+						<Setter Property="Height" Value="40"></Setter>
+						<Setter Property="BorderThickness" Value="2"></Setter>
+						<Setter Property="CornerRadius" Value="8"></Setter>
+						<Setter Property="BorderBrush" Value="#E40714"></Setter>
+						<Setter Property="Margin" Value="8"></Setter>
+					</Style>
+					<Style Selector="TextBlock.nameField">
+						<Setter Property="VerticalAlignment" Value="Center"></Setter>
+						<Setter Property="Margin" Value="20 0"></Setter>
+						<Setter Property="FontFamily" Value="Roboto"></Setter>
+						<Setter Property="FontSize" Value="17"></Setter>
+						<Setter Property="FontWeight" Value="Medium"></Setter>
+					</Style>
+					<Style Selector="Button.buttons">
+						<Setter Property="Background" Value="Transparent"></Setter>
+						<Setter Property="Margin" Value="10 0"></Setter>
+					</Style>
+					<Style Selector="Button.buttons:pointerover /template/ ContentPresenter">
+						<Setter Property="Foreground" Value="#E40714"></Setter>
+						<Setter Property="Background" Value="Transparent"></Setter>
+					</Style>
+				</StackPanel.Styles>
+
+				<Border Classes="field">
+					<Grid>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Classes="nameField">Визиты</TextBlock>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+							<Button Classes="buttons">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+									<Image Source="avares://Acosta/Assets/plus_black.png" Width="20"></Image>
+									<TextBlock Text="Добавить" VerticalAlignment="Center" FontFamily="Roboto" FontSize="15" Margin="10 0"></TextBlock>
+								</StackPanel>
+							</Button>
+							<TextBlock VerticalAlignment="Center" FontSize="16">/</TextBlock>
+							<Button Classes="buttons">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+									<Image Source="avares://Acosta/Assets/change.png" Width="20"></Image>
+									<TextBlock Text="Изменить" VerticalAlignment="Center" FontFamily="Roboto" FontSize="15" Margin="10 0"></TextBlock>
+								</StackPanel>
+							</Button>
+						</StackPanel>
+					</Grid>
+				</Border>
+				<Border Classes="field">
+					<Grid>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Classes="nameField">Проекты</TextBlock>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+							<Button Classes="buttons">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+									<Image Source="avares://Acosta/Assets/plus_black.png" Width="20"></Image>
+									<TextBlock Text="Добавить" VerticalAlignment="Center" FontFamily="Roboto" FontSize="15" Margin="10 0"></TextBlock>
+								</StackPanel>
+							</Button>
+							<TextBlock VerticalAlignment="Center" FontSize="16">/</TextBlock>
+							<Button Classes="buttons">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+									<Image Source="avares://Acosta/Assets/change.png" Width="20"></Image>
+									<TextBlock Text="Изменить" VerticalAlignment="Center" FontFamily="Roboto" FontSize="15" Margin="10 0"></TextBlock>
+								</StackPanel>
+							</Button>
+						</StackPanel>
+					</Grid>
+				</Border>
+				<Border Classes="field">
+					<Grid>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Classes="nameField">Торговые сети</TextBlock>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+							<Button Classes="buttons" Command="{Binding AddTradeNetworksView}">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+									<Image Source="avares://Acosta/Assets/plus_black.png" Width="20"></Image>
+									<TextBlock Text="Добавить" VerticalAlignment="Center" FontFamily="Roboto" FontSize="15" Margin="10 0"></TextBlock>
+								</StackPanel>
+							</Button>
+							<TextBlock VerticalAlignment="Center" FontSize="16">/</TextBlock>
+							<Button Classes="buttons" Command="{Binding BackTradeNetworksView}">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+									<Image Source="avares://Acosta/Assets/eye.png" Width="20"></Image>
+									<TextBlock Text="Просмотреть" VerticalAlignment="Center" FontFamily="Roboto" FontSize="15" Margin="10 0"></TextBlock>
+								</StackPanel>
+							</Button>
+						</StackPanel>
+					</Grid>
+				</Border>
+				<Border Classes="field">
+					<Grid>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Classes="nameField">Торговые точки</TextBlock>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+							<Button Classes="buttons" Command="{Binding AddOutletsView}">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+									<Image Source="avares://Acosta/Assets/plus_black.png" Width="20"></Image>
+									<TextBlock Text="Добавить" VerticalAlignment="Center" FontFamily="Roboto" FontSize="15" Margin="10 0"></TextBlock>
+								</StackPanel>
+							</Button>
+							<TextBlock VerticalAlignment="Center" FontSize="16">/</TextBlock>
+							<Button Classes="buttons" Command="{Binding BackOutletsView}">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+									<Image Source="avares://Acosta/Assets/change.png" Width="20"></Image>
+									<TextBlock Text="Изменить" VerticalAlignment="Center" FontFamily="Roboto" FontSize="15" Margin="10 0"></TextBlock>
+								</StackPanel>
+							</Button>
+						</StackPanel>
+					</Grid>
+				</Border>
+				<Border Classes="field">
+					<Grid>
+						<StackPanel Orientation="Horizontal">
+							<TextBlock Classes="nameField">Сотрудники</TextBlock>
+						</StackPanel>
+						<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+							<Button Classes="buttons" Command="{Binding AddEmployeesView}">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+									<Image Source="avares://Acosta/Assets/plus_black.png" Width="20"></Image>
+									<TextBlock Text="Добавить" VerticalAlignment="Center" FontFamily="Roboto" FontSize="15" Margin="10 0"></TextBlock>
+								</StackPanel>
+							</Button>
+							<TextBlock VerticalAlignment="Center" FontSize="16">/</TextBlock>
+							<Button Classes="buttons" Command="{Binding BackEmployeesView}">
+								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+									<Image Source="avares://Acosta/Assets/change.png" Width="20"></Image>
+									<TextBlock Text="Изменить" VerticalAlignment="Center" FontFamily="Roboto" FontSize="15" Margin="10 0"></TextBlock>
+								</StackPanel>
+							</Button>
+						</StackPanel>
+					</Grid>
+				</Border>
+				
 			</StackPanel>
 		</StackPanel>
-		
 	</Grid>
 </UserControl>

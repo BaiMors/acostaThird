@@ -239,7 +239,7 @@
 					</Border>
 				</StackPanel>-->
 				<!--РАЗДЕЛЬНОЕ ФИО-->
-				<StackPanel Orientation="Horizontal" Margin="70 0 0 0"><!--Margin="40 0 0 0"-->
+				<StackPanel Orientation="Horizontal" Margin="40 0 0 0"><!--Margin="40 0 0 0"-->
 					<Button Classes="BtEdit" Width="90" Height="40" Margin="0 0 70 0" Command="{Binding EditEmployeesView}">
 						<TextBlock Classes="TextBtEdit">ID</TextBlock>
 					</Button>
@@ -263,7 +263,7 @@
 						<TextBlock Classes="Data">Типа  телефон</TextBlock>
 					</Border>
 				</StackPanel>
-				<StackPanel Orientation="Horizontal" Margin="70 20 0 0">
+				<StackPanel Orientation="Horizontal" Margin="40 20 0 0">
 					<!--Margin="40 0 0 0"-->
 					<Button Classes="BtEdit" Width="90" Height="40" Margin="0 0 70 0" Command="{Binding EditEmployeesView}">
 						<TextBlock Classes="TextBtEdit">ID</TextBlock>

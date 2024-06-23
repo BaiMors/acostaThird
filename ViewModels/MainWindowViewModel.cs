@@ -33,11 +33,11 @@ namespace Acosta.ViewModels
         }
 
         public UserControl UC { get => uc; set => this.RaiseAndSetIfChanged(ref uc, value); } 
-        private UserControl uc = new AddEmployeesView();
+        private UserControl uc = new AuthorizationView();
 
         public void LoadPersonalAccount()
         {
-            UC = new AddEmployeesView();/*PersonalAccountView();*/
+            UC = new PersonalAccountView();
             Employee? currentUser = myConnection.Employees.FirstOrDefault(x => x.Email == AuthorizationVM.Login && x.Password == AuthorizationVM.Password);
             if (currentUser == null)
             {
@@ -51,7 +51,6 @@ namespace Acosta.ViewModels
             {
                 AuthorizationVM.Message = "Успех!";
             }
-            UC = new PersonalAccountView();
         }
         public void ExitFromProfile()
         {
