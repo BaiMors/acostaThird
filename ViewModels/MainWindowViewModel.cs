@@ -37,6 +37,7 @@ namespace Acosta.ViewModels
 
         public void LoadPersonalAccount()
         {
+            UC = new AddEmployeesView();/*PersonalAccountView();*/
             Employee? currentUser = myConnection.Employees.FirstOrDefault(x => x.Email == AuthorizationVM.Login && x.Password == AuthorizationVM.Password);
             if (currentUser == null)
             {

@@ -153,18 +153,28 @@
 					</StackPanel>
 					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
 					<StackPanel Orientation="Horizontal">
-						<TextBlock Classes="TextToTextBox">ФИО:</TextBlock>
-						<TextBox Watermark="ФИО" Width="360" Margin="195 20 0 0"></TextBox>
+						<TextBlock Classes="TextToTextBox">Фамилия:</TextBlock>
+						<TextBox Watermark="Фималия" Width="360" Margin="160 20 0 0"></TextBox>
+					</StackPanel>
+					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Classes="TextToTextBox">Имя:</TextBlock>
+						<TextBox Watermark="Имя" Width="360" Margin="200 20 0 0"></TextBox>
+					</StackPanel>
+					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
+					<StackPanel Orientation="Horizontal">
+						<TextBlock Classes="TextToTextBox">Отчетсво:</TextBlock>
+						<TextBox Watermark="Отчетсво" Width="360" Margin="156 20 0 0"></TextBox>
 					</StackPanel>
 					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
 					<StackPanel Orientation="Horizontal">
 						<TextBlock Classes="TextToTextBox">Почта:</TextBlock>
-						<TextBox Watermark="Почта" Width="360" Margin="185 20 0 0"></TextBox>
+						<TextBox Watermark="Почта" Width="360" Margin="183 20 0 0"></TextBox>
 					</StackPanel>
 					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
 					<StackPanel Orientation="Horizontal">
 						<TextBlock Classes="TextToTextBox">Пароль:</TextBlock>
-						<TextBox Watermark="Пароль" Width="360" Margin="175 20 0 0"></TextBox>
+						<TextBox Watermark="Пароль" Width="360" Margin="170 20 0 0"></TextBox>
 					</StackPanel>
 					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
 					<StackPanel Orientation="Horizontal">
@@ -176,7 +186,7 @@
 						<TextBlock Classes="TextToTextBox">Роль:</TextBlock>
 						<TextBox Watermark="Роль" Width="360" Margin="200 20 0 0"></TextBox>
 					</StackPanel>
-					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
+					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="197 30 0 10" HorizontalAlignment="Left"></Border>
 					<StackPanel Orientation="Vertical">
 						<TextBlock Classes="TextToTextBox">Проекты:</TextBlock>
 						<CheckBox Classes="TextToCheckBox" Margin="202 10 0 0">
