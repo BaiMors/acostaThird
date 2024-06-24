@@ -4,6 +4,8 @@ using ReactiveUI;
 using Acosta.Models;
 using System.Linq;
 using Acosta.ViewModels;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace Acosta.ViewModels
 {
@@ -33,7 +35,7 @@ namespace Acosta.ViewModels
         }
 
         public UserControl UC { get => uc; set => this.RaiseAndSetIfChanged(ref uc, value); } 
-        private UserControl uc = new AuthorizationView();
+        private UserControl uc = new AddEmployeesView();
 
         public void LoadPersonalAccount()
         {
@@ -52,6 +54,9 @@ namespace Acosta.ViewModels
                 AuthorizationVM.Message = "Успех!";
             }
         }
+
+        public List<Project> ListProjects => myConnection.Projects.ToList();
+
         public void ExitFromProfile()
         {
             UC = new AuthorizationView();

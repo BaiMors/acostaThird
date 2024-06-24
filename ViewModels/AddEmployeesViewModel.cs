@@ -14,7 +14,7 @@ namespace Acosta.ViewModels
         {
             this.myConnection = myConnection;
             CurrentUser = new Employee();
-            myConnection.Add(CurrentUser);  
+            myConnection.Add(CurrentUser);
         }
 
         public Employee CurrentUser { get => currentUser; set => currentUser = value; }
