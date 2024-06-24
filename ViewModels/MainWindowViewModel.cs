@@ -6,6 +6,7 @@ using System.Linq;
 using Acosta.ViewModels;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Immutable;
 
 namespace Acosta.ViewModels
 {
@@ -56,6 +57,8 @@ namespace Acosta.ViewModels
         }
 
         public List<Project> ListProjects => myConnection.Projects.ToList();
+        public List<Role> rolesList => (from p in myConnection.Roles.ToList() where p.Title != "Оператор" select p).ToImmutableList().ToList();
+        public List<Employee> userList => (from p in myConnection.Employees.ToList() where p.Role != 1 select p).ToImmutableList().ToList();
 
         public void ExitFromProfile()
         {
@@ -89,7 +92,7 @@ namespace Acosta.ViewModels
         {
             UC = new EmployeesView();
         }
-        public void EditEmployeesView()
+        public void EditEmployeesView(int userID)
         {
             UC = new EditEmployeesView();
         }

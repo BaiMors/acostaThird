@@ -186,6 +186,16 @@
 						<TextBlock Classes="TextToTextBox">Роль:</TextBlock>
 						<TextBox Text="{Binding AddEmployeesViewModel.CurrentUser.Role}" Watermark="Роль" Width="360" Margin="200 20 0 0"></TextBox>
 					</StackPanel>
+					<!--<StackPanel Orientation="Horizontal">
+						<TextBlock Classes="TextToTextBox">Роль:</TextBlock>
+						<ComboBox ItemsSource="{Binding rolesList}">
+							<ComboBox.ItemTemplate>
+								<DataTemplate>
+									<TextBlock Text="{Binding Roleid}" />
+								</DataTemplate>
+							</ComboBox.ItemTemplate>
+						</ComboBox>
+					</StackPanel>-->
 					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="197 30 0 10" HorizontalAlignment="Left"></Border>
 					<TextBlock Classes="TextToTextBox">Проекты:</TextBlock>
 					<ListBox ItemsSource="{Binding ListProjects}">
