@@ -148,22 +148,18 @@
 			<ScrollViewer Height="600">
 			<StackPanel Orientation="Vertical">
 				<StackPanel Orientation="Horizontal">
-					<TextBlock Classes="TextToTextBox">Торговая сеть:</TextBlock>					
-					<ComboBox Classes="TextToComboBox" SelectedIndex="0" Margin="120 20 0 0" Width="360" Height="40">
-						<ComboBoxItem IsEnabled="False">–––––––––––––</ComboBoxItem>
-						<!--пример-->
-						<ComboBoxItem>Магнит</ComboBoxItem>
-					</ComboBox>					
+					<TextBlock Classes="TextToTextBox">Торговая сеть:</TextBlock>
+					<TextBox Text="{Binding OutletVM.CurrentOutlet.TradeNetworks}" Watermark="Торговая сеть" Width="360" Margin="185 20 0 0"></TextBox>				
 				</StackPanel>				
 					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>				
 				<StackPanel Orientation="Horizontal">
 					<TextBlock Classes="TextToTextBox">Адрес:</TextBlock>
-					<TextBox Watermark="Адрес" Width="360" Margin="185 20 0 0"></TextBox>
+					<TextBox Text="{Binding OutletVM.CurrentOutlet.Address}" Watermark="Адрес" Width="360" Margin="185 20 0 0"></TextBox>
 				</StackPanel>
 				<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
 				<StackPanel Orientation="Horizontal">
 					<TextBlock Classes="TextToTextBox">Местоположение:</TextBlock>
-					<TextBox Watermark="Местоположение" Width="360" Margin="90 20 0 0"></TextBox>
+					<TextBox Text="{Binding OutletVM.CurrentOutlet.Location}" Watermark="Местоположение" Width="360" Margin="90 20 0 0"></TextBox>
 				</StackPanel>
 				<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
 				<StackPanel Orientation="Vertical">
@@ -233,7 +229,7 @@
 			<Button Classes="BtDelete" Command="">
 				<TextBlock Classes="TextBtDelete">Удалить</TextBlock>
 			</Button>
-			<Button Classes="BtSave" Command="">
+			<Button Classes="BtSave" Command="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).SaveNetwork}">
 				<TextBlock Classes="TextBtSave">Добавить</TextBlock>
 			</Button>
 		</StackPanel>

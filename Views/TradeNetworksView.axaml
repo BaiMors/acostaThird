@@ -148,18 +148,17 @@
 				<TextBlock Classes="TextColumns">НАИМЕНОВАНИЕ</TextBlock>				
 			</Border>
 			<ScrollViewer Height="550">
-			<StackPanel Orientation="Vertical">
-				<Border  Classes="Data" CornerRadius="13"  Width="1400" Height="40">
-					<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
-				</Border>
-				<!--Пример как это должно будет выглядеть в зависимости от количества записей в бд-->
-				<Border  Classes="Data" CornerRadius="13"  Width="1400" Height="40">
-					<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
-				</Border>
-				<Border  Classes="Data" CornerRadius="13"  Width="1400" Height="40">
-					<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
-				</Border>				
-			</StackPanel>
+				<ListBox ItemsSource="{Binding ListTrades}">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<StackPanel Orientation="Vertical">
+								<Border  Classes="Data" CornerRadius="13"  Width="1400" Height="40">
+									<TextBlock Text="{Binding Title}" Classes="Data">Типа название торговой сети</TextBlock>
+								</Border>
+							</StackPanel>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
 			</ScrollViewer>
 		</StackPanel>
 	</Grid>

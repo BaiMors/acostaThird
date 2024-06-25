@@ -239,55 +239,35 @@
 					</Border>
 				</StackPanel>-->
 				<!--РАЗДЕЛЬНОЕ ФИО-->
-				<StackPanel Orientation="Horizontal" Margin="40 0 0 0"><!--Margin="40 0 0 0"-->
-					<Button Classes="BtEdit" Width="90" Height="40" Margin="0 0 70 0" Command="{Binding EditEmployeesView}">
-						<TextBlock Classes="TextBtEdit">ID</TextBlock>
-					</Button>
-					<!--<Border  Classes="Data" CornerRadius="13"  Width="180" Height="40" Margin="0 0 140 0">
+				<ListBox ItemsSource="{Binding ListEmployees}">
+					<ListBox.ItemTemplate>
+						<DataTemplate>
+							<StackPanel Orientation="Horizontal" Margin="40 0 0 0">
+								<!--Margin="40 0 0 0"-->
+								<!--<Border  Classes="Data" CornerRadius="13"  Width="180" Height="40" Margin="0 0 140 0">
 						<TextBlock Classes="Data">Типа ID</TextBlock>
 					</Border>-->
-					<!--<TextBox Classes="EditTextBox" Width="230" Margin="0 0 125 0">Типа сотрудник</TextBox>-->
-					<TextBox Classes="EditTextBox" Width="170" Margin="0 0 70 0">Типа фамилия</TextBox>
-					<TextBox Classes="EditTextBox" Width="130" Margin="0 0 55 0">Типа имя</TextBox>
-					<TextBox Classes="EditTextBox" Width="170" Margin="0 0 70 0">Типа отчество</TextBox>
-					<!--<Border  Classes="Data" CornerRadius="13"  Width="310" Height="40" Margin="0 0 140 0">
+								<!--<TextBox Classes="EditTextBox" Width="230" Margin="0 0 125 0">Типа сотрудник</TextBox>-->
+								<TextBox Text="{Binding Employeesid}" Classes="EditTextBox" Width="70" Margin="0 0 70 0">Типа id</TextBox>
+								<TextBox Text="{Binding Surname}" Classes="EditTextBox" Width="170" Margin="0 0 70 0">Типа фамилия</TextBox>
+								<TextBox Text="{Binding Name}" Classes="EditTextBox" Width="130" Margin="0 0 55 0">Типа имя</TextBox>
+								<TextBox Text="{Binding Patronymic}" Classes="EditTextBox" Width="170" Margin="0 0 70 0">Типа отчество</TextBox>
+								<!--<Border  Classes="Data" CornerRadius="13"  Width="310" Height="40" Margin="0 0 140 0">
 						<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
 					</Border>-->
-					<Border  Classes="Data" CornerRadius="13"  Width="130" Height="40" Margin="0 0 63 0">
-						<TextBlock Classes="Data">Типа  роль</TextBlock>
-					</Border>
-					<Border  Classes="Data" CornerRadius="13"  Width="150" Height="40" Margin="0 0 55 0">
-						<TextBlock Classes="Data">Типа  почта</TextBlock>
-					</Border>
-					<Border  Classes="Data" CornerRadius="13"  Width="170" Height="40">
-						<TextBlock Classes="Data">Типа  телефон</TextBlock>
-					</Border>
-				</StackPanel>
-				<StackPanel Orientation="Horizontal" Margin="40 20 0 0">
-					<!--Margin="40 0 0 0"-->
-					<Button Classes="BtEdit" Width="90" Height="40" Margin="0 0 70 0" Command="{Binding EditEmployeesView}">
-						<TextBlock Classes="TextBtEdit">ID</TextBlock>
-					</Button>
-					<!--<Border  Classes="Data" CornerRadius="13"  Width="180" Height="40" Margin="0 0 140 0">
-						<TextBlock Classes="Data">Типа ID</TextBlock>
-					</Border>-->
-					<!--<TextBox Classes="EditTextBox" Width="230" Margin="0 0 125 0">Типа сотрудник</TextBox>-->
-					<TextBox Classes="EditTextBox" Width="170" Margin="0 0 70 0">Типа фамилия</TextBox>
-					<TextBox Classes="EditTextBox" Width="130" Margin="0 0 55 0">Типа имя</TextBox>
-					<TextBox Classes="EditTextBox" Width="170" Margin="0 0 70 0">Типа отчество</TextBox>
-					<!--<Border  Classes="Data" CornerRadius="13"  Width="310" Height="40" Margin="0 0 140 0">
-						<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
-					</Border>-->
-					<Border  Classes="Data" CornerRadius="13"  Width="130" Height="40" Margin="0 0 63 0">
-						<TextBlock Classes="Data">Типа  роль</TextBlock>
-					</Border>
-					<Border  Classes="Data" CornerRadius="13"  Width="150" Height="40" Margin="0 0 55 0">
-						<TextBlock Classes="Data">Типа  почта</TextBlock>
-					</Border>
-					<Border  Classes="Data" CornerRadius="13"  Width="170" Height="40">
-						<TextBlock Classes="Data">Типа  телефон</TextBlock>
-					</Border>
-				</StackPanel>
+								<Border  Classes="Data" CornerRadius="13"  Width="130" Height="40" Margin="0 0 63 0">
+									<TextBlock Text="{Binding Role}" Classes="Data">Типа  роль</TextBlock>
+								</Border>
+								<Border  Classes="Data" CornerRadius="13"  Width="150" Height="40" Margin="0 0 55 0">
+									<TextBlock Text="{Binding Email}" Classes="Data">Типа  почта</TextBlock>
+								</Border>
+								<Border  Classes="Data" CornerRadius="13"  Width="170" Height="40">
+									<TextBlock Text="{Binding Phonenumber}" Classes="Data">Типа  телефон</TextBlock>
+								</Border>
+							</StackPanel>
+						</DataTemplate>
+					</ListBox.ItemTemplate>
+				</ListBox>
 			</StackPanel>			
 			</ScrollViewer>
 		</StackPanel>

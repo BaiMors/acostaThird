@@ -3,7 +3,6 @@ using Avalonia.Controls;
 using ReactiveUI;
 using Acosta.Models;
 using System.Linq;
-using Acosta.ViewModels;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Immutable;
@@ -20,8 +19,12 @@ namespace Acosta.ViewModels
         AddTradeNetworksViewViewModel addTradeNetworksVM = new AddTradeNetworksViewViewModel(myConnection);
         public AddTradeNetworksViewViewModel AddTradeNetworksVM { get => addTradeNetworksVM; set => addTradeNetworksVM = value; }
 
-        AddEmployeesViewModel addEmployeesViewModel = new AddEmployeesViewModel(myConnection);
-        public AddEmployeesViewModel AddEmployeesViewModel { get => addEmployeesViewModel; set => addEmployeesViewModel = value; }
+        /*AddEmployeesViewModel addEmployeesViewModel = new AddEmployeesViewModel(myConnection);
+        public AddEmployeesViewModel AddEmployeesViewModel { get => addEmployeesViewModel; set => addEmployeesViewModel = value; }*/
+
+
+        AddOutletsViewModel outletVM = new AddOutletsViewModel(myConnection);
+        public AddOutletsViewModel OutletVM { get => outletVM; set => outletVM = value; }
 
         public void SaveNetwork()
         {
@@ -29,18 +32,24 @@ namespace Acosta.ViewModels
             UC = new TradeNetworksView();
         }
 
-        public void SaveUser()
+        /*public void SaveUser()
         {
             myConnection.SaveChanges();
             UC = new EmployeesView();
-        }
+        }*/
+
+        /*public void SaveData()
+        {
+            myConnection.SaveChanges();
+            UC = new PersonalAccountView();
+        }*/
 
         public UserControl UC { get => uc; set => this.RaiseAndSetIfChanged(ref uc, value); } 
-        private UserControl uc = new AddEmployeesView();
+        private UserControl uc = new TradeNetworksView();
 
         public void LoadPersonalAccount()
         {
-            UC = new PersonalAccountView();
+            
             Employee? currentUser = myConnection.Employees.FirstOrDefault(x => x.Email == AuthorizationVM.Login && x.Password == AuthorizationVM.Password);
             if (currentUser == null)
             {
@@ -53,12 +62,19 @@ namespace Acosta.ViewModels
             else
             {
                 AuthorizationVM.Message = "Успех!";
+                UC = new PersonalAccountView();
             }
         }
 
         public List<Project> ListProjects => myConnection.Projects.ToList();
-        public List<Role> rolesList => (from p in myConnection.Roles.ToList() where p.Title != "Оператор" select p).ToImmutableList().ToList();
-        public List<Employee> userList => (from p in myConnection.Employees.ToList() where p.Role != 1 select p).ToImmutableList().ToList();
+        public List<Employee> ListEmployees => myConnection.Employees.ToList();
+        public List<Outlet> ListOutlets => myConnection.Outlets.ToList();
+        public List<TradeNetwork> ListTrades => myConnection.TradeNetworks.ToList();
+
+        /*public List<Role> rolesList => (from p in myConnection.Roles.ToList() where p.Title != "Оператор" select p).ToImmutableList().ToList();
+        public List<Employee> userList => (from p in myConnection.Employees.ToList() where p.Role != 1 select p).ToImmutableList().ToList();*/
+
+
 
         public void ExitFromProfile()
         {
