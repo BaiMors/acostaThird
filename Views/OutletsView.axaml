@@ -196,8 +196,8 @@
 								<!--<Border  Classes="Data" CornerRadius="13"  Width="180" Height="40" Margin="0 0 140 0">
 						<TextBlock Classes="Data">Типа ID</TextBlock>
 					</Border>-->
-								<TextBox Text="{Binding Outletid}" Classes="EditTextBox" Width="70" Margin="0 0 140 0">Типа id</TextBox>
-								<TextBox Text="{Binding TradeNetworks}" Classes="EditTextBox" Width="70" Margin="0 0 140 0">Типа название торговой сети</TextBox>
+								<TextBlock Text="{Binding Outletid}" Classes="EditTextBox" Width="70" Margin="0 0 140 0">Типа id</TextBlock>
+								<TextBlock Text="{Binding $parent[Window].((vm:MainWindowViewModel)DataContext).getTitle}" Classes="EditTextBox" Width="70" Margin="0 0 140 0">Типа название торговой сети</TextBlock>
 								<!--<Border  Classes="Data" CornerRadius="13"  Width="310" Height="40" Margin="0 0 140 0">
 						<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
 					</Border>-->

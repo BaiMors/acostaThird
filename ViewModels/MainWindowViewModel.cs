@@ -26,6 +26,9 @@ namespace Acosta.ViewModels
         AddOutletsViewModel outletVM = new AddOutletsViewModel(myConnection);
         public AddOutletsViewModel OutletVM { get => outletVM; set => outletVM = value; }
 
+        PersonalAccountViewModel personalAccountVM = new PersonalAccountViewModel(myConnection);
+        public PersonalAccountViewModel PersonalAccountVM { get => personalAccountVM; set => personalAccountVM = value; }
+
         public void SaveNetwork()
         {
             myConnection.SaveChanges();
@@ -45,7 +48,8 @@ namespace Acosta.ViewModels
         }*/
 
         public UserControl UC { get => uc; set => this.RaiseAndSetIfChanged(ref uc, value); } 
-        private UserControl uc = new TradeNetworksView();
+        private UserControl uc = new AuthorizationView();
+        public int curUsId;
 
         public void LoadPersonalAccount()
         {
@@ -62,6 +66,8 @@ namespace Acosta.ViewModels
             else
             {
                 AuthorizationVM.Message = "Успех!";
+                curUsId = currentUser.Employeesid;
+                PersonalAccountVM = new PersonalAccountViewModel(myConnection, curUsId);
                 UC = new PersonalAccountView();
             }
         }
@@ -69,7 +75,49 @@ namespace Acosta.ViewModels
         public List<Project> ListProjects => myConnection.Projects.ToList();
         public List<Employee> ListEmployees => myConnection.Employees.ToList();
         public List<Outlet> ListOutlets => myConnection.Outlets.ToList();
+        List<a> newList = new List<a>(new a((from p in myConnection.Outlets.ToList() select p.Outletid).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Address).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Location).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.TradeNetworks.ToList() select p.Title).ToImmutableList().ToList().FirstOrDefault()));
+        
+        public struct a
+        {
+            int Outlerid;
+            string Address;
+            string Location;
+            string TradeNetworks;
+            
+
+            public a(int oid, string ad, string loc, string tn)
+            {
+                Outlerid = oid;
+                Address = ad;
+                Location = loc;
+                TradeNetworks = tn;
+            }
+        }
+        //public IEnumerable<dynamic> ListOutlets => myConnection.Outlets.Select(p => new
+        //{
+        //    p.Outletid,
+        //    p.Address,
+        //    p.Location,
+        //    TradeTitles = ListTrades.Where(x => x.Tradeid == p.TradeNetworks).Select(x => x.Title),
+        //    p.TradeNetworks,
+        //    p.Visits
+        //}).ToList();
+        //    public List<Outlet> ListOutlets => myConnection.Outlets
+        //.Join(myConnection.TradeNetworks,
+        //      outlet => outlet.TradeNetworks,
+        //      tradeNetwork => tradeNetwork.Tradeid,
+        //      (outlet, tradeNetwork) => new Outlet
+        //      {
+        //          Outletid = outlet.Outletid,
+        //          Address = outlet.Address,
+        //          Location = outlet.Location,
+        //          TradeNetworks = tradeNetwork.Title, // replace this with the actual property name for the retail chain name
+        //          Visits = outlet.Visits
+        //      })
+        //.ToList();
         public List<TradeNetwork> ListTrades => myConnection.TradeNetworks.ToList();
+
+        
 
         /*public List<Role> rolesList => (from p in myConnection.Roles.ToList() where p.Title != "Оператор" select p).ToImmutableList().ToList();
         public List<Employee> userList => (from p in myConnection.Employees.ToList() where p.Role != 1 select p).ToImmutableList().ToList();*/

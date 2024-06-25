@@ -43,7 +43,7 @@
 				<StackPanel Orientation="Horizontal">
 					<TextBlock Classes="headerLogo">Acosta</TextBlock>
 					<TextBlock Classes="greeting" Margin="770 12 0 0">Добро пожаловать, оператор</TextBlock>
-					<TextBlock Classes="greeting" Margin="7 12 0 0" FontWeight="Bold" Name="FIO">Фамилия И.О.</TextBlock>
+					<TextBlock Classes="greeting" Margin="7 12 0 0" FontWeight="Bold" Name="FIO" Text="{Binding PersonalAccountVM.CurrentUser.Surname}"/>
 					<TextBlock Classes="greeting" Margin="10 10 0 0">/</TextBlock>
 					<Button Classes="headerBt" Command="">Изменить пароль</Button>
 					<TextBlock Classes="greeting" Margin="0 10 0 0">/</TextBlock>
