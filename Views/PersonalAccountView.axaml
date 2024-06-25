@@ -51,7 +51,8 @@
 				</StackPanel>
 			</StackPanel>
 			<StackPanel>
-				<TextBlock Text="Администрирование приложения" FontWeight="Medium" FontFamily="Roboto" FontSize="30" HorizontalAlignment="Center" Margin="0 100 0 30"></TextBlock>
+				<TextBlock Text="Администрирование приложения" FontWeight="Medium" FontFamily="Roboto"
+						   FontSize="30" HorizontalAlignment="Center" Margin="0 100 0 30"></TextBlock>
 				<StackPanel.Styles>
 					<Style Selector="Border.field">
 						<Setter Property="Width" Value="600"></Setter>
