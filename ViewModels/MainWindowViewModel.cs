@@ -132,6 +132,43 @@ namespace Acosta.ViewModels
 
 
 
+        public void AddVisitView()
+        {
+            UC = new AddVisitView();
+        }
+        public void BackVisitView()
+        {
+            UC = new VisitsView();
+        }
+        public void EditVisitView()
+        {
+            UC = new EditVisitView();
+        }
+        public void AddProjectsView()
+        {
+            UC = new AddProjectsView();
+        }
+        public void BackProjectsView()
+        {
+            UC = new ProjectsView();
+        }
+        public void EditProjectsView()
+        {
+            UC = new EditProjectsView();
+        }
+        public void BackPersonalAccountView()
+        {
+            UC = new PersonalAccountView();
+        }
+        public void ChangePasswordView()
+        {
+            UC = new ChangePasswordView();
+        }
+
+
+
+
+
         public void ExitFromProfile()
         {
             UC = new AuthorizationView();

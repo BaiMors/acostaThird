@@ -45,7 +45,7 @@
 					<TextBlock Classes="greeting" Margin="770 12 0 0">Добро пожаловать, оператор</TextBlock>
 					<TextBlock Classes="greeting" Margin="7 12 0 0" FontWeight="Bold" Name="FIO" Text="{Binding PersonalAccountVM.CurrentUser.Surname}"/>
 					<TextBlock Classes="greeting" Margin="10 10 0 0">/</TextBlock>
-					<Button Classes="headerBt" Command="">Изменить пароль</Button>
+					<Button Classes="headerBt" Command="{Binding ChangePasswordView}">Изменить пароль</Button>
 					<TextBlock Classes="greeting" Margin="0 10 0 0">/</TextBlock>
 					<Button Classes="headerBt" Command="{Binding ExitFromProfile}">Выйти</Button>
 				</StackPanel>
@@ -85,14 +85,14 @@
 							<TextBlock Classes="nameField">Визиты</TextBlock>
 						</StackPanel>
 						<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-							<Button Classes="buttons">
+							<Button Classes="buttons" Command="{Binding AddVisitView}">
 								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
 									<Image Source="avares://Acosta/Assets/plus_black.png" Width="20"></Image>
 									<TextBlock Text="Добавить" VerticalAlignment="Center" FontFamily="Roboto" FontSize="15" Margin="10 0"></TextBlock>
 								</StackPanel>
 							</Button>
 							<TextBlock VerticalAlignment="Center" FontSize="16">/</TextBlock>
-							<Button Classes="buttons">
+							<Button Classes="buttons" Command="{Binding BackVisitView}">
 								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
 									<Image Source="avares://Acosta/Assets/change.png" Width="20"></Image>
 									<TextBlock Text="Изменить" VerticalAlignment="Center" FontFamily="Roboto" FontSize="15" Margin="10 0"></TextBlock>
@@ -107,14 +107,14 @@
 							<TextBlock Classes="nameField">Проекты</TextBlock>
 						</StackPanel>
 						<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-							<Button Classes="buttons">
+							<Button Classes="buttons" Command="{Binding AddProjectsView}">
 								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
 									<Image Source="avares://Acosta/Assets/plus_black.png" Width="20"></Image>
 									<TextBlock Text="Добавить" VerticalAlignment="Center" FontFamily="Roboto" FontSize="15" Margin="10 0"></TextBlock>
 								</StackPanel>
 							</Button>
 							<TextBlock VerticalAlignment="Center" FontSize="16">/</TextBlock>
-							<Button Classes="buttons">
+							<Button Classes="buttons" Command="{Binding BackProjectsView}">
 								<StackPanel Orientation="Horizontal" VerticalAlignment="Center">
 									<Image Source="avares://Acosta/Assets/change.png" Width="20"></Image>
 									<TextBlock Text="Изменить" VerticalAlignment="Center" FontFamily="Roboto" FontSize="15" Margin="10 0"></TextBlock>
