@@ -19,8 +19,8 @@ namespace Acosta.ViewModels
         AddTradeNetworksViewViewModel addTradeNetworksVM = new AddTradeNetworksViewViewModel(myConnection);
         public AddTradeNetworksViewViewModel AddTradeNetworksVM { get => addTradeNetworksVM; set => addTradeNetworksVM = value; }
 
-        /*AddEmployeesViewModel addEmployeesViewModel = new AddEmployeesViewModel(myConnection);
-        public AddEmployeesViewModel AddEmployeesViewModel { get => addEmployeesViewModel; set => addEmployeesViewModel = value; }*/
+        AddEmployeesViewModel addEmployeesVM = new AddEmployeesViewModel(myConnection);
+        public AddEmployeesViewModel AddEmployeesVM { get => addEmployeesVM; set => addEmployeesVM = value; }
 
 
         AddOutletsViewModel outletVM = new AddOutletsViewModel(myConnection);
@@ -34,17 +34,9 @@ namespace Acosta.ViewModels
         PersonalAccountViewModel personalAccountVM = new PersonalAccountViewModel(myConnection);
         public PersonalAccountViewModel PersonalAccountVM { get => personalAccountVM; set => personalAccountVM = value; }
 
-        public void SaveNetwork()
-        {
-            myConnection.SaveChanges();
-            UC = new TradeNetworksView();
-        }
 
-        /*public void SaveUser()
-        {
-            myConnection.SaveChanges();
-            UC = new EmployeesView();
-        }*/
+
+        
 
         /*public void SaveData()
         {
@@ -78,7 +70,7 @@ namespace Acosta.ViewModels
         }
 
         public List<Project> ListProjects => myConnection.Projects.ToList();
-        public List<Employee> ListEmployees => myConnection.Employees.ToList();
+        public List<Employee> ListEmployees => myConnection.Employees.ToList().Where(x => x.Employeesid != curUsId).ToList();
         public List<Outlet> ListOutlets => myConnection.Outlets.ToList();
         //public List<string> fkTrade => myConnection.TradeNetworks.ToList().Select(x => x.Title).Where()
         //List<a> newList = new List<a>(new a((from p in myConnection.Outlets.ToList() select p.Outletid).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Address).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Location).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.TradeNetworks.ToList() select p.Title).ToImmutableList().ToList().FirstOrDefault()));
@@ -144,6 +136,8 @@ namespace Acosta.ViewModels
         {
             UC = new EditVisitView();
         }
+
+
         public void AddProjectsView()
         {
             UC = new AddProjectsView();
@@ -156,6 +150,8 @@ namespace Acosta.ViewModels
         {
             UC = new EditProjectsView();
         }
+
+
         public void BackPersonalAccountView()
         {
             UC = new PersonalAccountView();
@@ -164,15 +160,12 @@ namespace Acosta.ViewModels
         {
             UC = new ChangePasswordView();
         }
-
-
-
-
-
         public void ExitFromProfile()
         {
             UC = new AuthorizationView();
         }
+
+
         public void AddTradeNetworksView()
         {
             UC = new AddTradeNetworksView();
@@ -181,6 +174,8 @@ namespace Acosta.ViewModels
         {
             UC = new TradeNetworksView();
         }
+
+
         public void AddOutletsView()
         {
             UC = new AddOutletsView();
@@ -193,8 +188,11 @@ namespace Acosta.ViewModels
         {
             UC = new EditOutletsView();
         }
+
+
         public void AddEmployeesView()
         {
+
             UC = new AddEmployeesView();
         }
         public void BackEmployeesView()
@@ -203,6 +201,7 @@ namespace Acosta.ViewModels
         }
         public void EditEmployeesView(int userID)
         {
+            
             UC = new EditEmployeesView();
         }
     }

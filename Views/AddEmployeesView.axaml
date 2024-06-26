@@ -152,37 +152,37 @@
 					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
 					<StackPanel Orientation="Horizontal">
 						<TextBlock Classes="TextToTextBox">Фамилия:</TextBlock>
-						<TextBox  Watermark="Фамилия" Width="360" Margin="160 20 0 0"></TextBox>
+						<TextBox Text="{Binding AddEmployeesVM.CurrentUser.Surname}" Watermark="Фамилия" Width="360" Margin="160 20 0 0"></TextBox>
 					</StackPanel>
 					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
 					<StackPanel Orientation="Horizontal">
 						<TextBlock Classes="TextToTextBox">Имя:</TextBlock>
-						<TextBox  Watermark="Имя" Width="360" Margin="200 20 0 0"></TextBox>
+						<TextBox Text="{Binding AddEmployeesVM.CurrentUser.Name}" Watermark="Имя" Width="360" Margin="200 20 0 0"></TextBox>
 					</StackPanel>
 					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
 					<StackPanel Orientation="Horizontal">
 						<TextBlock Classes="TextToTextBox">Отчетсво:</TextBlock>
-						<TextBox  Watermark="Отчетсво" Width="360" Margin="156 20 0 0"></TextBox>
+						<TextBox Text="{Binding AddEmployeesVM.CurrentUser.Patronymic}" Watermark="Отчетсво" Width="360" Margin="156 20 0 0"></TextBox>
 					</StackPanel>
 					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
 					<StackPanel Orientation="Horizontal">
 						<TextBlock Classes="TextToTextBox">Почта:</TextBlock>
-						<TextBox  Watermark="Почта" Width="360" Margin="183 20 0 0"></TextBox>
+						<TextBox Text="{Binding AddEmployeesVM.CurrentUser.Email}" Watermark="Почта" Width="360" Margin="183 20 0 0"></TextBox>
 					</StackPanel>
 					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
 					<StackPanel Orientation="Horizontal">
 						<TextBlock Classes="TextToTextBox">Пароль:</TextBlock>
-						<TextBox  Watermark="Пароль" Width="360" Margin="170 20 0 0"></TextBox>
+						<TextBox Text="{Binding AddEmployeesVM.CurrentUser.Password}" Watermark="Пароль" Width="360" Margin="170 20 0 0"></TextBox>
 					</StackPanel>
 					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
 					<StackPanel Orientation="Horizontal">
 						<TextBlock Classes="TextToTextBox">Телефон:</TextBlock>
-						<TextBox  Watermark="Телефон" Width="360" Margin="165 20 0 0"></TextBox>
+						<TextBox Text="{Binding AddEmployeesVM.CurrentUser.Phonenumber}" Watermark="Телефон" Width="360" Margin="165 20 0 0"></TextBox>
 					</StackPanel>
 					<Border Background="#969696" CornerRadius="13"  Width="1150" Height="0.5" Margin="200 30 0 10" HorizontalAlignment="Left"></Border>
 					<StackPanel Orientation="Horizontal">
 						<TextBlock Classes="TextToTextBox">Роль:</TextBlock>
-						<TextBox  Watermark="Роль" Width="360" Margin="200 20 0 0"></TextBox>
+						<TextBox Text="{Binding AddEmployeesVM.CurrentUser.Role}" Watermark="Роль" Width="360" Margin="200 20 0 0"></TextBox>
 					</StackPanel>
 					<!--<StackPanel Orientation="Horizontal">
 						<TextBlock Classes="TextToTextBox">Роль:</TextBlock>
@@ -262,7 +262,7 @@
 			<Button Classes="BtDelete" Command="">
 				<TextBlock Classes="TextBtDelete">Удалить</TextBlock>
 			</Button>
-			<Button Classes="BtSave" Command="">
+			<Button Classes="BtSave" Command="{Binding AddEmployeesVM.SaveUser}">
 				<TextBlock Classes="TextBtSave">Добавить</TextBlock>
 			</Button>
 		</StackPanel>
