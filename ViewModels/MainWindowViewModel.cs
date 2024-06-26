@@ -49,7 +49,6 @@ namespace Acosta.ViewModels
 
         public UserControl UC { get => uc; set => this.RaiseAndSetIfChanged(ref uc, value); } 
         private UserControl uc = new AuthorizationView();
-        private UserControl uc = new AuthorizationView();
         public int curUsId;
 
         public void LoadPersonalAccount()
