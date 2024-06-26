@@ -26,6 +26,11 @@ namespace Acosta.ViewModels
         AddOutletsViewModel outletVM = new AddOutletsViewModel(myConnection);
         public AddOutletsViewModel OutletVM { get => outletVM; set => outletVM = value; }
 
+
+        OutletsListViewModel outletListVM = new OutletsListViewModel(myConnection);
+        public OutletsListViewModel OutletListVM { get => outletListVM; set => outletListVM = value; }
+
+
         PersonalAccountViewModel personalAccountVM = new PersonalAccountViewModel(myConnection);
         public PersonalAccountViewModel PersonalAccountVM { get => personalAccountVM; set => personalAccountVM = value; }
 
@@ -75,24 +80,25 @@ namespace Acosta.ViewModels
         public List<Project> ListProjects => myConnection.Projects.ToList();
         public List<Employee> ListEmployees => myConnection.Employees.ToList();
         public List<Outlet> ListOutlets => myConnection.Outlets.ToList();
-        List<a> newList = new List<a>(new a((from p in myConnection.Outlets.ToList() select p.Outletid).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Address).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Location).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.TradeNetworks.ToList() select p.Title).ToImmutableList().ToList().FirstOrDefault()));
+        //public List<string> fkTrade => myConnection.TradeNetworks.ToList().Select(x => x.Title).Where()
+        //List<a> newList = new List<a>(new a((from p in myConnection.Outlets.ToList() select p.Outletid).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Address).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Location).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.TradeNetworks.ToList() select p.Title).ToImmutableList().ToList().FirstOrDefault()));
         
-        public struct a
-        {
-            int Outlerid;
-            string Address;
-            string Location;
-            string TradeNetworks;
+        //public struct a
+        //{
+        //    int Outlerid;
+        //    string Address;
+        //    string Location;
+        //    string TradeNetworks;
             
 
-            public a(int oid, string ad, string loc, string tn)
-            {
-                Outlerid = oid;
-                Address = ad;
-                Location = loc;
-                TradeNetworks = tn;
-            }
-        }
+        //    public a(int oid, string ad, string loc, string tn)
+        //    {
+        //        Outlerid = oid;
+        //        Address = ad;
+        //        Location = loc;
+        //        TradeNetworks = tn;
+        //    }
+        //}
         //public IEnumerable<dynamic> ListOutlets => myConnection.Outlets.Select(p => new
         //{
         //    p.Outletid,
@@ -118,6 +124,8 @@ namespace Acosta.ViewModels
         public List<TradeNetwork> ListTrades => myConnection.TradeNetworks.ToList();
 
         
+
+
 
         /*public List<Role> rolesList => (from p in myConnection.Roles.ToList() where p.Title != "Оператор" select p).ToImmutableList().ToList();
         public List<Employee> userList => (from p in myConnection.Employees.ToList() where p.Role != 1 select p).ToImmutableList().ToList();*/
