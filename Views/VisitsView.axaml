@@ -111,15 +111,13 @@
 				</Button>
 				<TextBlock Classes="Chapter">Выберите Визит для изменения</TextBlock>
 				<StackPanel Orientation="Horizontal">
-					<Button Classes="BtAdd" Width="240" Command="{Binding AddEmployeesView}">
+					<Button Classes="BtAdd" Width="240" Command="{Binding AddVisitView}">
 						<TextBlock Classes="TextBtAdd">
 							Добавить визит <Image Source="avares://Acosta/Assets/plus.png" Width="25" Margin="20 0" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
 						</TextBlock>
 					</Button>
 				</StackPanel>
 			</StackPanel>
-
-
 			<StackPanel>
 				<StackPanel.Styles>
 					<Style Selector="TextBlock.TextColumns">
@@ -145,17 +143,90 @@
 					</StackPanel>
 				</Border>	
 			</StackPanel>
-			<StackPanel Orientation="Vertical" Margin="60 30">
+			<StackPanel.Styles>
+				<Style Selector="TextBlock.TextColumn">
+					<Setter Property="Foreground" Value="Black"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="18"></Setter>
+					<Setter Property="Margin" Value="50 0"></Setter>
+					<Setter Property="VerticalAlignment" Value="Center"></Setter>
+					<Setter Property="HorizontalAlignment" Value="Center"></Setter>
+				</Style>
+				<Style Selector="ComboBox.TextColumn">
+					<Setter Property="Foreground" Value="Black"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="18"></Setter>
+					<Setter Property="VerticalAlignment" Value="Center"></Setter>
+					<Setter Property="HorizontalAlignment" Value="Center"></Setter>
+					<Setter Property="BorderBrush" Value="Transparent"></Setter>
+					<Setter Property="Background" Value="Transparent"></Setter>
+					<Setter Property="Width" Value="180"></Setter>
+				</Style>
+				<Style Selector="Border.TextColumn">
+					<Setter Property="Margin" Value="60 0 0 20"></Setter>
+					<Setter Property="HorizontalAlignment" Value="Center"></Setter>
+					<Setter Property="VerticalAlignment" Value="Center"></Setter>
+					<Setter Property="Background" Value="#FFF8F8"></Setter>
+					<Setter Property="Height" Value="40"></Setter>
+					<Setter Property="BorderBrush" Value="#E40714"></Setter>
+					<Setter Property="BorderThickness" Value="2"></Setter>
+					<Setter Property="CornerRadius" Value="13"></Setter>
+				</Style>
+			</StackPanel.Styles>
+			<StackPanel Orientation="Vertical" Margin="0 30">
 				<StackPanel Orientation="Horizontal">
-					<Button Margin="60 0">
-						<TextBlock Classes="TextColumns">Название торговой точки</TextBlock>
-					</Button>
-					<TextBlock Classes="TextColumns">Название проекта</TextBlock>
-					
+					<Border Classes="TextColumn">
+						<Button Background="Transparent" Command="{Binding EditVisitView}">
+							<TextBlock Classes="TextColumn">Название торговой точки</TextBlock>
+						</Button>
+					</Border>
+					<Border Classes="TextColumn">
+						<TextBlock Classes="TextColumn">Название проекта</TextBlock>
+					</Border>
+					<Border Classes="TextColumn">
+						<TextBlock Classes="TextColumn" Margin="30 0">Дата визита</TextBlock>
+					</Border>
+					<Border Classes="TextColumn">
+						<TextBlock Classes="TextColumn">Время визита</TextBlock>
+					</Border>
+					<Border Classes="TextColumn">
+						<ComboBox Classes="TextColumn">
+							<ComboBoxItem>Принят</ComboBoxItem>
+							<ComboBoxItem>Не принят</ComboBoxItem>
+						</ComboBox>
+					</Border>
 				</StackPanel>
 			</StackPanel>
-			
-			
+		</StackPanel>
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+			<StackPanel.Styles>
+				<Style Selector="TextBlock.TextBtSave">
+					<Setter Property="Foreground" Value="#F5F5F5"></Setter>
+					<Setter Property="FontFamily" Value="Roboto"></Setter>
+					<Setter Property="FontWeight" Value="Medium"></Setter>
+					<Setter Property="FontSize" Value="20"></Setter>
+					<Setter Property="HorizontalAlignment" Value="Center"></Setter>
+					<Setter Property="VerticalAlignment" Value="Center"></Setter>
+				</Style>
+				<Style Selector="Button.BtSave">
+					<Setter Property="Width" Value="180"></Setter>
+					<Setter Property="Height" Value="38"></Setter>
+					<Setter Property="Margin" Value="0 740 30 20"></Setter>
+					<Setter Property="Background" Value="#E40714"></Setter>
+					<Setter Property="CornerRadius" Value="13"></Setter>
+				</Style>
+				<Style Selector="Button.BtSave:pointerover /template/ ContentPresenter">
+					<Setter Property="Background" Value="#A10009"></Setter>
+				</Style>
+				<Style Selector="Button.BtSave:pressed">
+					<Setter Property="RenderTransform" Value="none"/>
+				</Style>
+			</StackPanel.Styles>
+			<Button Classes="BtSave" Command="">
+				<TextBlock Classes="TextBtSave">Сохранить</TextBlock>
+			</Button>
 		</StackPanel>
 	</Grid>
 </UserControl>

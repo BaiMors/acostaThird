@@ -72,6 +72,7 @@ namespace Acosta.ViewModels
         public List<Project> ListProjects => myConnection.Projects.ToList();
         public List<Employee> ListEmployees => myConnection.Employees.ToList().Where(x => x.Employeesid != curUsId).ToList();
         public List<Outlet> ListOutlets => myConnection.Outlets.ToList();
+        //List<a> newList = new List<a>(new a((from p in myConnection.Outlets.ToList() select p.Outletid).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Address).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Location).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.TradeNetworks.ToList() select p.Title).ToImmutableList().ToList().FirstOrDefault()));
         //public List<string> fkTrade => myConnection.TradeNetworks.ToList().Select(x => x.Title).Where()
         //List<a> newList = new List<a>(new a((from p in myConnection.Outlets.ToList() select p.Outletid).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Address).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Location).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.TradeNetworks.ToList() select p.Title).ToImmutableList().ToList().FirstOrDefault()));
         
