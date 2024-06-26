@@ -288,7 +288,7 @@
 					<Setter Property="Background" Value="#A10009"></Setter>
 				</Style>
 				<Style Selector="Button.BtSave:pressed">
-					<Setter Property="RenderTransform" Value="none"/>
+					<Setter Property="RenderTransform" Value="none" />
 				</Style>
 			</StackPanel.Styles>
 			<Button Classes="BtSave" Command="">
