@@ -9,7 +9,7 @@ namespace Acosta.ViewModels
 {
 	public class AddEmployeesViewModel : ReactiveObject
 	{
-        SuharevaContext myConnection;
+        SuharevaContext myConnection1;
         Employee currentUser;
 
         private UserControl uce = new AddTradeNetworksView();
@@ -24,7 +24,7 @@ namespace Acosta.ViewModels
 
         public AddEmployeesViewModel(SuharevaContext myConnection)
         {
-            this.myConnection = myConnection;
+            this.myConnection1 = myConnection;
             CurrentUser = new Employee();
 /*            CurrentUser.Surname = F;
             CurrentUser.Name = I;
@@ -37,7 +37,7 @@ namespace Acosta.ViewModels
         }
         public AddEmployeesViewModel(SuharevaContext myConnection, int userID)
         {
-            this.myConnection = myConnection;
+            this.myConnection1 = myConnection;
             CurrentUser = new Employee();
             myConnection.Add(currentUser);
         }
@@ -55,7 +55,7 @@ namespace Acosta.ViewModels
         public void SaveUser()
         {
             
-            myConnection.SaveChanges();
+            myConnection1.SaveChanges();
             UCE = new EmployeesView();
         }
     }

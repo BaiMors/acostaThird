@@ -12,6 +12,7 @@ namespace Acosta.ViewModels
     public class MainWindowViewModel : ViewModelBase
     {
         public static SuharevaContext myConnection = new SuharevaContext();
+        public static SuharevaContext myConnection1 = new SuharevaContext();
 
         AuthorizationViewModel authorizationVM = new AuthorizationViewModel();
         public AuthorizationViewModel AuthorizationVM { get => authorizationVM; set => authorizationVM = value; }
@@ -19,7 +20,7 @@ namespace Acosta.ViewModels
         AddTradeNetworksViewViewModel addTradeNetworksVM = new AddTradeNetworksViewViewModel(myConnection);
         public AddTradeNetworksViewViewModel AddTradeNetworksVM { get => addTradeNetworksVM; set => addTradeNetworksVM = value; }
 
-        AddEmployeesViewModel addEmployeesVM = new AddEmployeesViewModel(myConnection);
+        AddEmployeesViewModel addEmployeesVM = new AddEmployeesViewModel(myConnection1);
         public AddEmployeesViewModel AddEmployeesVM { get => addEmployeesVM; set => addEmployeesVM = value; }
 
 
