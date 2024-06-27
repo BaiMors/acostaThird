@@ -195,8 +195,7 @@
 						<TextBlock Classes="Data">Типа ID</TextBlock>
 					</Border>-->
 								<TextBlock Text="{Binding Outletid}" Classes="EditTextBox" Width="70" Margin="0 0 140 0">Типа id</TextBlock>
-								<TextBlock Classes="EditTextBox" Width="70" Margin="0 0 140 0">Типа название торговой сети</TextBlock>
-								<TextBlock Text="{Binding TradeNetworksNavigation.Title}" Classes="EditTextBox" Width="70" Margin="0 0 140 0">Типа название торговой сети</TextBlock>
+								<TextBlock Text="{Binding TradeNetworksNavigation.Title}" Classes="EditTextBox" Width="200" Margin="0 0 140 0">Типа название торговой сети</TextBlock>
 								<!--<Border  Classes="Data" CornerRadius="13"  Width="310" Height="40" Margin="0 0 140 0">
 						<TextBlock Classes="Data">Типа название торговой сети</TextBlock>
 					</Border>-->
