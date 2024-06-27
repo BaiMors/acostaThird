@@ -185,7 +185,7 @@
 			<Button Classes="BtDelete" Command="">
 				<TextBlock Classes="TextBtDelete">Удалить</TextBlock>
 			</Button>
-			<Button Classes="BtSave" Command="{Binding AddTradeNetworksVM.SaveNetwork}">
+			<Button Classes="BtSave" Command="{Binding SaveNetwork}">
 				
 				<TextBlock Classes="TextBtSave">Добавить</TextBlock>
 			</Button>

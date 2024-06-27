@@ -7,17 +7,16 @@ namespace Acosta.ViewModels
 {
     public class AddOutletsViewModel : ReactiveObject
     {
-        SuharevaContext myConnection;
-        Outlet currentOutlet;
+        SuharevaContext myC;
+        Outlet? currentOutlet;
 
-        public AddOutletsViewModel(SuharevaContext myConnection)
+        public AddOutletsViewModel(SuharevaContext myC)
         {
-            this.myConnection = myConnection;
+            this.myC = myC;
             CurrentOutlet = new Outlet();
-            myConnection.Add(CurrentOutlet);
-
+            myC.Add(CurrentOutlet);
         }
 
-        public Outlet CurrentOutlet { get => currentOutlet; set => currentOutlet = value; }
+        public Outlet? CurrentOutlet { get => currentOutlet; set => currentOutlet = value; }
     }
 }

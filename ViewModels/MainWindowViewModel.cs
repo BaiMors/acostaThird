@@ -11,20 +11,22 @@ namespace Acosta.ViewModels
 {
     public class MainWindowViewModel : ViewModelBase
     {
-        public static SuharevaContext myConnection = new SuharevaContext();
-        public static SuharevaContext myConnection1 = new SuharevaContext();
+        static SuharevaContext myConnection = new SuharevaContext();
+        static SuharevaContext myConnection1 = new SuharevaContext();
+        static SuharevaContext myConnection2 = new SuharevaContext();
+        static SuharevaContext myConnection3 = new SuharevaContext();
 
         AuthorizationViewModel authorizationVM = new AuthorizationViewModel();
         public AuthorizationViewModel AuthorizationVM { get => authorizationVM; set => authorizationVM = value; }
 
-        AddTradeNetworksViewViewModel addTradeNetworksVM = new AddTradeNetworksViewViewModel(myConnection);
+        AddTradeNetworksViewViewModel addTradeNetworksVM = new AddTradeNetworksViewViewModel(myConnection2);
         public AddTradeNetworksViewViewModel AddTradeNetworksVM { get => addTradeNetworksVM; set => addTradeNetworksVM = value; }
 
         AddEmployeesViewModel addEmployeesVM = new AddEmployeesViewModel(myConnection1);
         public AddEmployeesViewModel AddEmployeesVM { get => addEmployeesVM; set => addEmployeesVM = value; }
 
 
-        AddOutletsViewModel outletVM = new AddOutletsViewModel(myConnection);
+        AddOutletsViewModel outletVM = new AddOutletsViewModel(myConnection3);
         public AddOutletsViewModel OutletVM { get => outletVM; set => outletVM = value; }
 
 
@@ -36,14 +38,23 @@ namespace Acosta.ViewModels
         public PersonalAccountViewModel PersonalAccountVM { get => personalAccountVM; set => personalAccountVM = value; }
 
 
-
-        
-
-        /*public void SaveData()
+        public void SaveNetwork()
         {
-            myConnection.SaveChanges();
-            UC = new PersonalAccountView();
-        }*/
+            myConnection2.SaveChanges();
+            UC = new TradeNetworksView();
+        }
+
+        public void SaveUser()
+        {
+            myConnection1.SaveChanges();
+            UC = new EmployeesView();
+        }
+
+        public void SaveOutlet()
+        {
+            myConnection3.SaveChanges();
+            UC = new OutletsView();
+        }
 
         public UserControl UC { get => uc; set => this.RaiseAndSetIfChanged(ref uc, value); } 
         private UserControl uc = new AuthorizationView();
