@@ -16,6 +16,7 @@ namespace Acosta.ViewModels
         {
             this.myConnection = myConnection;
             CurrentOutlet = myConnection.Outlets.Include(x => x.TradeNetworksNavigation).FirstOrDefault();
+            MainWindowViewModel a = new();
         }
 
         public List<TradeNetwork> ListTrades => myConnection.TradeNetworks.ToList();

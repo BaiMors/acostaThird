@@ -15,6 +15,8 @@ namespace Acosta.ViewModels
         static SuharevaContext myConnection1 = new SuharevaContext();
         static SuharevaContext myConnection2 = new SuharevaContext();
         static SuharevaContext myConnection3 = new SuharevaContext();
+        static SuharevaContext myConnection4 = new SuharevaContext();
+        static SuharevaContext myConnection5 = new SuharevaContext();
 
         AuthorizationViewModel authorizationVM = new AuthorizationViewModel();
         public AuthorizationViewModel AuthorizationVM { get => authorizationVM; set => authorizationVM = value; }
@@ -30,13 +32,16 @@ namespace Acosta.ViewModels
         public AddOutletsViewModel OutletVM { get => outletVM; set => outletVM = value; }
 
 
-        OutletsListViewModel outletListVM = new OutletsListViewModel(myConnection);
+        OutletsListViewModel outletListVM = new OutletsListViewModel(myConnection4);
         public OutletsListViewModel OutletListVM { get => outletListVM; set => outletListVM = value; }
 
 
         PersonalAccountViewModel personalAccountVM = new PersonalAccountViewModel(myConnection);
         public PersonalAccountViewModel PersonalAccountVM { get => personalAccountVM; set => personalAccountVM = value; }
 
+
+        VisitsViewModel visitsVM = new VisitsViewModel(myConnection5);
+        public VisitsViewModel VisitsVM { get => visitsVM; set => visitsVM = value; }
 
         public void SaveNetwork()
         {
@@ -84,17 +89,19 @@ namespace Acosta.ViewModels
         public List<Project> ListProjects => myConnection.Projects.ToList();
         public List<Employee> ListEmployees => myConnection.Employees.ToList().Where(x => x.Employeesid != curUsId).ToList();
         public List<Outlet> ListOutlets => myConnection.Outlets.ToList();
+        public List<Visit> ListVisits => myConnection.Visits.ToList();
+        public List<Acceptance> Acceptances => myConnection.Acceptances.ToList();
         //List<a> newList = new List<a>(new a((from p in myConnection.Outlets.ToList() select p.Outletid).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Address).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Location).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.TradeNetworks.ToList() select p.Title).ToImmutableList().ToList().FirstOrDefault()));
         //public List<string> fkTrade => myConnection.TradeNetworks.ToList().Select(x => x.Title).Where()
         //List<a> newList = new List<a>(new a((from p in myConnection.Outlets.ToList() select p.Outletid).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Address).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.Outlets.ToList() select p.Location).ToImmutableList().ToList().FirstOrDefault(), (from p in myConnection.TradeNetworks.ToList() select p.Title).ToImmutableList().ToList().FirstOrDefault()));
-        
+
         //public struct a
         //{
         //    int Outlerid;
         //    string Address;
         //    string Location;
         //    string TradeNetworks;
-            
+
 
         //    public a(int oid, string ad, string loc, string tn)
         //    {
@@ -129,6 +136,8 @@ namespace Acosta.ViewModels
         public List<TradeNetwork> ListTrades => myConnection.TradeNetworks.ToList();
 
         
+
+
 
 
 

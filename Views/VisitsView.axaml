@@ -175,7 +175,7 @@
 					<Setter Property="CornerRadius" Value="13"></Setter>
 				</Style>
 			</StackPanel.Styles>
-			<StackPanel Orientation="Vertical" Margin="0 30">
+			<!--<StackPanel Orientation="Vertical" Margin="0 30">
 				<StackPanel Orientation="Horizontal">
 					<Border Classes="TextColumn">
 						<Button Background="Transparent" Command="{Binding EditVisitView}">
@@ -198,7 +198,38 @@
 						</ComboBox>
 					</Border>
 				</StackPanel>
-			</StackPanel>
+			</StackPanel>-->
+			<ScrollViewer Height="500">
+				<StackPanel Orientation="Vertical">
+					<ListBox ItemsSource="{Binding ListVisits}">
+						<ListBox.ItemTemplate>
+							<DataTemplate>
+								<StackPanel Orientation="Horizontal" Margin="40 20 0 0">
+									<!--<TextBlock Text="{Binding Outletid}" Classes="EditTextBox" Width="70" Margin="0 0 140 0">Типа id</TextBlock>
+									<TextBlock Text="{Binding TradeNetworksNavigation.Title}" Classes="EditTextBox" Width="200" Margin="0 0 140 0">Типа название торговой сети</TextBlock>
+									<Border  Classes="Data" CornerRadius="13"  Width="220" Height="40" Margin="0 0 145 0">
+										<TextBlock Text="{Binding Address}" Classes="Data">Типа  адрес</TextBlock>
+									</Border>
+									<Border  Classes="Data" CornerRadius="13"  Width="280" Height="40">
+										<TextBlock Text="{Binding Location}" Classes="Data">Типа  местоположение</TextBlock>
+									</Border>-->
+									<TextBlock Text="{Binding OutletNavigation.Address}" Classes="TextColumn">Название торговой точки</TextBlock>
+									<TextBlock Text="{Binding ProjectNavigation.Title}" Classes="TextColumn">Название проекта</TextBlock>
+									<TextBlock Text="{Binding Visitdate}" Classes="TextColumn" Margin="30 0">Дата визита</TextBlock>
+									<TextBlock Text="{Binding Visittime}" Classes="TextColumn">Время визита</TextBlock>
+									<!--<ComboBox ItemsSource="{Binding }" SelectedItem="{Binding VisitsVM.CurrentVisit.AcceptedNavigation}" Classes="TextColumn">
+										<ComboBox.ItemTemplate>
+											<DataTemplate>
+												<TextBlock Text="{Binding }" Classes="TextColumn">Время визита</TextBlock>
+											</DataTemplate>
+										</ComboBox.ItemTemplate>
+									</ComboBox>-->
+								</StackPanel>
+							</DataTemplate>
+						</ListBox.ItemTemplate>
+					</ListBox>
+				</StackPanel>
+			</ScrollViewer>
 		</StackPanel>
 		<StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
 			<StackPanel.Styles>
